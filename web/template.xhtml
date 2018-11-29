@@ -19,7 +19,7 @@
             <p:layoutUnit position="north" size="65" header="REPORTES PROGRAMACION">
                 <h:form id="menuForm">
                     <p:menubar>
-                        <p:menuitem value="#{bundle.Home}" outcome="/index1" icon="ui-icon-home"/>
+                        <p:menuitem value="#{bundle.Home}" outcome="/template" icon="ui-icon-home"/>
                         <p:submenu label="Elija Reporte">
                               <p:menuitem value="Flota programada" outcome="/listado_buses.xhtml" />
                               <p:menuitem value="Expediciones" outcome="/cantidad_expediciones.xhtml" />
@@ -29,12 +29,17 @@
                 </h:form>
             </p:layoutUnit>
 
-            <p:layoutUnit position="south" size="60">
+            <p:layoutUnit position="south" size="120">
                 <ui:insert name="footer"/>
+                 <br>TRANSMILENIO SA</br> 
+                <br>Dirección Técnica de Buses</br> 
+                <br>Autor: Ing. Girlesa Buitrago </br>  
+                 <p>2018 todos los derechos reservados </p>  
             </p:layoutUnit>
 
             <p:layoutUnit position="center">
                 <ui:insert name="body"/>
+                  <p>aqui la carreta </p>  
             </p:layoutUnit>
 
         </p:layout>

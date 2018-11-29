@@ -9,6 +9,9 @@
     <ui:composition template="/template.xhtml">
         <ui:define name="body">
             <h:body>
+               <h1 align="center">
+                    EXPEDICIONES
+                </h1>    
                 <p:dataTable value="#{listadoExpedicionesPeriodo.listExp}" var="fila"
                              paginator="true"
                                  rowKey="#{item.id}"

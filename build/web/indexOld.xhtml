@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Reportes Programación DTB</title>
+        <h:outputStylesheet name="css/jsfcrud.css"/>
+    </h:head>
+
+    <h:body>
+        <p:layout fullPage="true">
+
+            <p:layoutUnit position="north" size="100" resizable="true" closable="true" collapsible="true">
+                TRANSMILENIO S.A  "DIRECCIÓN TÉCNICA DE BUSES"  
+            </p:layoutUnit>
+
+            <p:layoutUnit position="south" size="100" closable="true" collapsible="true">
+                <p>Dirección Técnica de Buses</p> 
+                <p>TRANSMILENIO SA</p> 
+                <p>Autor: Ing. Girlesa Buitrago todos los derechos reservados...</p>  
+            </p:layoutUnit>
+
+            <p:layoutUnit position="west" size="175" header="Left" collapsible="true">
+                <p:menu>
+                    <p:submenu label="Reportes Programación">
+                        <p:menuitem value="Flota Programada" url="http://localhost:8083/Reportes1/faces/listado_buses.xhtml" />
+                        <p:menuitem value="Expediciones" url="http://www.primefaces.org/documentation.html" />
+                        <p:menuitem value="Kilómetraje " url="http://forum.primefaces.org/" />
+                        <p:menuitem value="Histórico" url="http://www.primefaces.org/themes.html" />
+
+                    </p:submenu>
+
+                </p:menu>
+            </p:layoutUnit>
+            <p:layoutUnit position="center">
+
+
+                CONTENIDO DE PORTADA AQUI
+              
+
+
+            </p:layoutUnit>
+        </p:layout>
+        <br />
+        <h:link outcome="/historicoCuentaExpediciones/List" value="Show All HistoricoCuentaExpediciones Items"/>
+    </h:body>
+
+
+    <!--  ubicar aquí la portada....transmilenio...sa  DESCOMENTARIAR SI HAY FALLO
+      <br />
+    <h:link outcome="welcomePrimefaces" value="Primefaces welcome page" />
+    <br />
+    <h:link outcome="/historicoCuentaBuses/List" value="Show All HistoricoCuentaBuses Items"/>
+     <br>
+    <h:link outcome="listado_buses" value="Flota programada"/>
+    </br>
+     <br>
+    <h:link outcome="template" value="plantilla"/>
+    </br>
+                <br />
+    <h:link outcome="/historicoCuentaExpediciones/List" value="Show All HistoricoCuentaExpediciones Items"/>
+</h:body>
+-->
+
+</html>
+
