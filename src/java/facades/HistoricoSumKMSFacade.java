@@ -6,6 +6,7 @@
 package facades;
 
 import controller.AbstractFacade;
+import controller.AbstractFacade;
 import entities.HistoricoSumKMS;
 import java.util.List;
 import javax.ejb.Stateless;
@@ -36,7 +37,7 @@ public class HistoricoSumKMSFacade extends AbstractFacade<HistoricoSumKMS> {
         List<Object[]> listKms;
         Query q=em.createNativeQuery("SELECT \"Cuadro\", \"Linea\", \"Tipo_Evento\", kms, \"Tipologia\", \"Operador\", \"RC\", \"Fecha\", \"Tipo_dia\"\n" +
                                     "  FROM public.\"Historico_Sum_KMS\" \n" +
-                                    "  WHERE \"Fecha\" between (select Max(\"Fecha\")-8 from \"Historico_Sum_KMS\" ) and  current_date ");
+                                    "  WHERE \"Fecha\" between (select Max(\"Fecha\")-8 from \"Historico_Sum_KMS\" )    and  current_date ");
        listKms=q.getResultList();
         return  listKms;
     }

@@ -8,109 +8,249 @@
         <title>Facelet Title</title>
     </h:head>
     <h:body>
-       
-       <p:panel header="REPORTES PROGRAMACION">   
-    <p:tabView>
-        <p:tab title="#{bundle.PageName}">
-           
-             
-                <p:dataTable value="#{listadoBusesFechaBean.listado}" var="fila" paginator="true" rowKey="#{item.id}" rows="50"  rowsPerPageTemplate="50,200,500,1000,100000" >
-                    <p:column>
-                        <f:facet name="header">
-                            <h:outputText value="RC"/>
-                        </f:facet>
-                        <h:outputText value="#{fila[0]}"/>
-                    </p:column>
-                    <p:column>
-                        <f:facet name="header">
-                            <h:outputText value="Tipologia"/>
-                        </f:facet>
-                        <h:outputText value="#{fila[1]}"/>
-                    </p:column>
-                    <p:column>
-                        <f:facet name="header">
-                            <h:outputText value="Operador"/>
-                        </f:facet>
-                        <h:outputText value="#{fila[2]}"/>
-                    </p:column>
-                    <p:column>
-                        <f:facet name="header">
-                            <h:outputText value="ZONA"/>
-                        </f:facet>
-                        <h:outputText value="#{fila[3]}"/>
-                    </p:column>
 
-                    <p:column>
-                        <f:facet name="header">
-                            <h:outputText value="Linea"/>
-                        </f:facet>
-                        <h:outputText value="#{fila[4]}"/>
-                    </p:column>
-                    <p:column>
-                        <f:facet name="header">
-                            <h:outputText value="Ruta_Com"/>
-                        </f:facet>
-                        <h:outputText value="#{fila[5]}"/>
-                    </p:column>
-                    <p:column>
-                        <f:facet name="header">
-                            <h:outputText value="Fecha"/>
-                        </f:facet>
-                        <h:outputText value="#{fila[6]}"/>
-                    </p:column>
-                    <p:column>
-                        <f:facet name="header">
-                            <h:outputText value="Tipo_Dia"/>
-                        </f:facet>
-                        <h:outputText value="#{fila[7]}"/>
-                    </p:column>
-                    <p:column>
-                        <f:facet name="header">
-                            <h:outputText value="Mes"/>
-                        </f:facet>
-                        <h:outputText value="#{fila[8]}"/>
-                    </p:column>
-                    <p:column>
-                        <f:facet name="header">
-                            <h:outputText value="Anio"/>
-                        </f:facet>
-                        <h:outputText value="#{fila[9]}"/>
-                    </p:column>
-                    <p:column>
-                        <f:facet name="header">
-                            <h:outputText value="Conteo_Buses_Tipologia"/>
-                        </f:facet>
-                        <h:outputText value="#{fila[10]}"/>
-                    </p:column>
-                </p:dataTable>
-        
-            
-            
-          </p:tab>
-        
-        
-        
-        <p:tab title="Godfather Part II">
+        <p:panel header="REPORTES PROGRAMACION">  
             <h:panelGrid columns="2" cellpadding="10">
-                <p:graphicImage name="demo/images/godfather/godfather2.jpg" />
-                <h:outputText value="Francis Ford Coppola's legendary continuation and sequel to his landmark 1972 film, The_Godfather, parallels the young Vito Corleone's rise with his son Michael's spiritual fall, deepening The_Godfather's depiction of the dark side of the American dream. 
-                In the early 1900s, the child Vito flees his Sicilian village for America after the local Mafia kills his family. Vito struggles to make a living, legally or illegally, for his wife and growing brood in Little Italy, 
-                killing the local Black Hand Fanucci after he demands his customary cut of the tyro's business. With Fanucci gone, Vito's communal stature grows." />
+                <p:button outcome="/template" value="VOLVER" icon="ui-icon-home" style="margin-right:20px;">
+                  </p:button>
             </h:panelGrid>
-        </p:tab>
-        <p:tab title="Godfather Part III">
-            <h:panelGrid columns="2" cellpadding="10">
-                <p:graphicImage name="demo/images/godfather/godfather3.jpg" />
-                <h:outputText value="After a break of more than 15 years, director Francis Ford Coppola and writer Mario Puzo returned to the well for this third and final story of the fictional Corleone crime family. 
-                    Two decades have passed, and crime kingpin Michael Corleone, now divorced from his wife Kay has nearly succeeded in keeping his promise that his family would one day be completely legitimate." />
-            </h:panelGrid>
-        </p:tab>
-    </p:tabView>
-                 </p:panel> 
-        
-        
-        
-        
+            <p:tabView>
+
+                <p:tab title="ACERCA DE">
+                    <h:panelGrid columns="2" cellpadding="10">
+                        <p:graphicImage name="demo/images/godfather/godfather2.jpg" />
+                        <h:outputText value="En este sitio, se encuentran los reportes del área de programación de la Dirección Técnica de Buses TMSA.  Se muestran los reportes 
+                                      del último més y en el caso de kilometraje, se muestran los últimos 8 días desde la última vez de carga de datos.
+                                      Si desea descargar en excel los reportes, debe hacer click derecho en la página y elegir DESCARGAR EN EXCEL." />
+                    </h:panelGrid>
+                </p:tab>
+                <p:tab title="#{bundle.PageName}">
+
+
+                    <p:dataTable value="#{listadoBusesFechaBean.listado}" var="fila" paginator="true" rowKey="#{item.id}" rows="50"  rowsPerPageTemplate="50,200,500,1000,100000" >
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="RC"/>
+                            </f:facet>
+                            <h:outputText value="#{fila[0]}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="Tipologia"/>
+                            </f:facet>
+                            <h:outputText value="#{fila[1]}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="Operador"/>
+                            </f:facet>
+                            <h:outputText value="#{fila[2]}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="ZONA"/>
+                            </f:facet>
+                            <h:outputText value="#{fila[3]}"/>
+                        </p:column>
+
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="Linea"/>
+                            </f:facet>
+                            <h:outputText value="#{fila[4]}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="Ruta_Com"/>
+                            </f:facet>
+                            <h:outputText value="#{fila[5]}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="Fecha"/>
+                            </f:facet>
+                            <h:outputText value="#{fila[6]}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="Tipo_Dia"/>
+                            </f:facet>
+                            <h:outputText value="#{fila[7]}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="Mes"/>
+                            </f:facet>
+                            <h:outputText value="#{fila[8]}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="Anio"/>
+                            </f:facet>
+                            <h:outputText value="#{fila[9]}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="Conteo_Buses_Tipologia"/>
+                            </f:facet>
+                            <h:outputText value="#{fila[10]}"/>
+                        </p:column>
+                    </p:dataTable>
+
+
+
+                </p:tab>
+
+
+
+
+                <p:tab title="#{expedBundle.PageName}">
+                    <p:dataTable value="#{listadoExpedicionesPeriodo.listExp}" var="fila1"
+                                 paginator="true"
+                                 rowKey="#{item.id}"
+                                 rows="30"
+                                 rowsPerPageTemplate="50,200,500,1000,5000"> 
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="Linea"/>
+                            </f:facet>
+                            <h:outputText value="#{fila1[0]}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="Tipo_Evento"/>
+                            </f:facet>
+                            <h:outputText value="#{fila1[1]}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="Cuenta_expediciones"/>
+                            </f:facet>
+                            <h:outputText value="#{fila1[2]}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="Tipologia"/>
+                            </f:facet>
+                            <h:outputText value="#{fila1[3]}"/>
+                        </p:column>
+
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="Operador"/>
+                            </f:facet>
+                            <h:outputText value="#{fila1[4]}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="RC"/>
+                            </f:facet>
+                            <h:outputText value="#{fila1[5]}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="Fecha"/>
+                            </f:facet>
+                            <h:outputText value="#{fila1[6]}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="Mes"/>
+                            </f:facet>
+                            <h:outputText value="#{fila1[7]}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="Tipo_Dia"/>
+                            </f:facet>
+                            <h:outputText value="#{fila1[8]}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="Dia_Cal"/>
+                            </f:facet>
+                            <h:outputText value="#{fila1[9]}"/>
+                        </p:column>
+
+                    </p:dataTable>
+                </p:tab>
+
+                <p:tab title="#{kmsBundle.PageName}">
+
+
+                    <p:dataTable value="#{listadoKilometrosBean.listadoKms}" var="fila"
+                                 paginator="true"
+                                 rowKey="#{item.id}"
+                                 rows="200"
+                                 rowsPerPageTemplate="50,200,500,1000,100000"> 
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="Cuadro"/>
+                            </f:facet>
+                            <h:outputText value="#{fila[0]}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="Linea"/>
+                            </f:facet>
+                            <h:outputText value="#{fila[1]}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="Tipo_Evento"/>
+                            </f:facet>
+                            <h:outputText value="#{fila[2]}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="Kms"/>
+                            </f:facet>
+                            <h:outputText value="#{fila[3]}"/>
+                        </p:column>
+
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="Tipologia"/>
+                            </f:facet>
+                            <h:outputText value="#{fila[4]}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="Operador"/>
+                            </f:facet>
+                            <h:outputText value="#{fila[5]}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="RC"/>
+                            </f:facet>
+                            <h:outputText value="#{fila[6]}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="Fecha"/>
+                            </f:facet>
+                            <h:outputText value="#{fila[7]}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="Tipo_Dia"/>
+                            </f:facet>
+                            <h:outputText value="#{fila[8]}"/>
+                        </p:column>
+
+
+                    </p:dataTable>
+                </p:tab>
+
+
+
+            </p:tabView>
+        </p:panel> 
+
+
+
+
     </h:body>
 </html>
 
