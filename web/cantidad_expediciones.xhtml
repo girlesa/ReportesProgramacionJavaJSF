@@ -7,11 +7,9 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
 
     <ui:composition template="/template.xhtml">
-        <ui:define name="body">
+        <ui:define name="body" >
             <h:body>
-               <h1 align="center">
-                    EXPEDICIONES
-                </h1>    
+                <p:panel header="EXPEDICIONES">  
                 <p:dataTable value="#{listadoExpedicionesPeriodo.listExp}" var="fila"
                              paginator="true"
                                  rowKey="#{item.id}"
@@ -80,9 +78,8 @@
                     </p:column>
 
                 </p:dataTable>
-                <p:button outcome="welcomePrimefaces" value="Volver a reportes" icon="pi pi-star" style="margin-right:20px;">
-                </p:button>
-
+                    </p:panel> 
+              
             </h:body>
         </ui:define>
     </ui:composition>
