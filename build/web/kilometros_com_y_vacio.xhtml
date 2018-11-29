@@ -9,12 +9,12 @@
     <ui:composition template="/template.xhtml">
         <ui:define name="body" >
             <h:body>
-                <p:panel header="KILOMETRAJE PROGRAMADO ULTIMOS 8 DIAS">  
+                <p:panel header="#{kmsBundle.PageName}">  
                     <p:dataTable value="#{listadoKilometrosBean.listadoKms}" var="fila"
                              paginator="true"
                                  rowKey="#{item.id}"
-                                 rows="30"
-                                 rowsPerPageTemplate="50,200,500,1000,50000"> 
+                                 rows="200"
+                                 rowsPerPageTemplate="50,200,500,1000,100000"> 
                     <p:column>
                         <f:facet name="header">
                             <h:outputText value="Cuadro"/>

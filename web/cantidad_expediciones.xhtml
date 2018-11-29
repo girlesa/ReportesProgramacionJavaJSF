@@ -9,7 +9,7 @@
     <ui:composition template="/template.xhtml">
         <ui:define name="body" >
             <h:body>
-                <p:panel header="EXPEDICIONES">  
+                <p:panel header="#{expedBundle.PageName}">  
                 <p:dataTable value="#{listadoExpedicionesPeriodo.listExp}" var="fila"
                              paginator="true"
                                  rowKey="#{item.id}"
