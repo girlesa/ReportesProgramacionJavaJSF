@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="HistoricoSumKMSViewDlg" widgetVar="HistoricoSumKMSViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{kmsBundle.ViewHistoricoSumKMSTitle}">
+            <h:form id="HistoricoSumKMSViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{historicoSumKMSController.selected != null}">
+                        <h:outputText value="#{kmsBundle.ViewHistoricoSumKMSLabel_id}"/>
+                        <h:outputText value="#{historicoSumKMSController.selected.id}" title="#{kmsBundle.ViewHistoricoSumKMSTitle_id}"/>
+                        <h:outputText value="#{kmsBundle.ViewHistoricoSumKMSLabel_cuadro}"/>
+                        <h:outputText value="#{historicoSumKMSController.selected.cuadro}" title="#{kmsBundle.ViewHistoricoSumKMSTitle_cuadro}"/>
+                        <h:outputText value="#{kmsBundle.ViewHistoricoSumKMSLabel_linea}"/>
+                        <h:outputText value="#{historicoSumKMSController.selected.linea}" title="#{kmsBundle.ViewHistoricoSumKMSTitle_linea}"/>
+                        <h:outputText value="#{kmsBundle.ViewHistoricoSumKMSLabel_tipoEvento}"/>
+                        <h:outputText value="#{historicoSumKMSController.selected.tipoEvento}" title="#{kmsBundle.ViewHistoricoSumKMSTitle_tipoEvento}"/>
+                        <h:outputText value="#{kmsBundle.ViewHistoricoSumKMSLabel_kms}"/>
+                        <h:outputText value="#{historicoSumKMSController.selected.kms}" title="#{kmsBundle.ViewHistoricoSumKMSTitle_kms}"/>
+                        <h:outputText value="#{kmsBundle.ViewHistoricoSumKMSLabel_tipologia}"/>
+                        <h:outputText value="#{historicoSumKMSController.selected.tipologia}" title="#{kmsBundle.ViewHistoricoSumKMSTitle_tipologia}"/>
+                        <h:outputText value="#{kmsBundle.ViewHistoricoSumKMSLabel_operador}"/>
+                        <h:outputText value="#{historicoSumKMSController.selected.operador}" title="#{kmsBundle.ViewHistoricoSumKMSTitle_operador}"/>
+                        <h:outputText value="#{kmsBundle.ViewHistoricoSumKMSLabel_rc}"/>
+                        <h:outputText value="#{historicoSumKMSController.selected.rc}" title="#{kmsBundle.ViewHistoricoSumKMSTitle_rc}"/>
+                        <h:outputText value="#{kmsBundle.ViewHistoricoSumKMSLabel_fecha}"/>
+                        <h:outputText value="#{historicoSumKMSController.selected.fecha}" title="#{kmsBundle.ViewHistoricoSumKMSTitle_fecha}">
+                            <f:convertDateTime pattern="MM/dd/yyyy" />
+                        </h:outputText>
+                        <h:outputText value="#{kmsBundle.ViewHistoricoSumKMSLabel_tipodia}"/>
+                        <h:outputText value="#{historicoSumKMSController.selected.tipodia}" title="#{kmsBundle.ViewHistoricoSumKMSTitle_tipodia}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{kmsBundle.Close}" onclick="HistoricoSumKMSViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

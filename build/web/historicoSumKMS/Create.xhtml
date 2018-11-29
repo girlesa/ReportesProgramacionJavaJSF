@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="HistoricoSumKMSCreateDlg" widgetVar="HistoricoSumKMSCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{kmsBundle.CreateHistoricoSumKMSTitle}">
+            <h:form id="HistoricoSumKMSCreateForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{historicoSumKMSController.selected != null}">
+                        <p:outputLabel value="#{kmsBundle.CreateHistoricoSumKMSLabel_id}" for="id" />
+                        <p:inputText id="id" value="#{historicoSumKMSController.selected.id}" title="#{kmsBundle.CreateHistoricoSumKMSTitle_id}" required="true" requiredMessage="#{kmsBundle.CreateHistoricoSumKMSRequiredMessage_id}"/>
+                        <p:outputLabel value="#{kmsBundle.CreateHistoricoSumKMSLabel_cuadro}" for="cuadro" />
+                        <p:inputText id="cuadro" value="#{historicoSumKMSController.selected.cuadro}" title="#{kmsBundle.CreateHistoricoSumKMSTitle_cuadro}" />
+                        <p:outputLabel value="#{kmsBundle.CreateHistoricoSumKMSLabel_linea}" for="linea" />
+                        <p:inputText id="linea" value="#{historicoSumKMSController.selected.linea}" title="#{kmsBundle.CreateHistoricoSumKMSTitle_linea}" />
+                        <p:outputLabel value="#{kmsBundle.CreateHistoricoSumKMSLabel_tipoEvento}" for="tipoEvento" />
+                        <p:inputText id="tipoEvento" value="#{historicoSumKMSController.selected.tipoEvento}" title="#{kmsBundle.CreateHistoricoSumKMSTitle_tipoEvento}" />
+                        <p:outputLabel value="#{kmsBundle.CreateHistoricoSumKMSLabel_kms}" for="kms" />
+                        <p:inputText id="kms" value="#{historicoSumKMSController.selected.kms}" title="#{kmsBundle.CreateHistoricoSumKMSTitle_kms}" />
+                        <p:outputLabel value="#{kmsBundle.CreateHistoricoSumKMSLabel_tipologia}" for="tipologia" />
+                        <p:inputText id="tipologia" value="#{historicoSumKMSController.selected.tipologia}" title="#{kmsBundle.CreateHistoricoSumKMSTitle_tipologia}" />
+                        <p:outputLabel value="#{kmsBundle.CreateHistoricoSumKMSLabel_operador}" for="operador" />
+                        <p:inputText id="operador" value="#{historicoSumKMSController.selected.operador}" title="#{kmsBundle.CreateHistoricoSumKMSTitle_operador}" />
+                        <p:outputLabel value="#{kmsBundle.CreateHistoricoSumKMSLabel_rc}" for="rc" />
+                        <p:inputText id="rc" value="#{historicoSumKMSController.selected.rc}" title="#{kmsBundle.CreateHistoricoSumKMSTitle_rc}" />
+                        <p:outputLabel value="#{kmsBundle.CreateHistoricoSumKMSLabel_fecha}" for="fecha" />
+                        <p:calendar id="fecha" pattern="MM/dd/yyyy" value="#{historicoSumKMSController.selected.fecha}" title="#{kmsBundle.EditHistoricoSumKMSTitle_fecha}"  showOn="button"/>
+                        <p:outputLabel value="#{kmsBundle.CreateHistoricoSumKMSLabel_tipodia}" for="tipodia" />
+                        <p:inputText id="tipodia" value="#{historicoSumKMSController.selected.tipodia}" title="#{kmsBundle.CreateHistoricoSumKMSTitle_tipodia}" />
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{historicoSumKMSController.create}" value="#{kmsBundle.Save}" update="display,:HistoricoSumKMSListForm:datalist,:growl" oncomplete="handleSubmit(args,'HistoricoSumKMSCreateDialog');"/>
+                    <p:commandButton value="#{kmsBundle.Cancel}" onclick="HistoricoSumKMSCreateDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

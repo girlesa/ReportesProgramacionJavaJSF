@@ -23,6 +23,7 @@
                         <p:submenu label="Elija Reporte">
                               <p:menuitem value="Flota programada" outcome="/listado_buses.xhtml" />
                               <p:menuitem value="Expediciones" outcome="/cantidad_expediciones.xhtml" />
+                                <p:menuitem value="Kilometraje" outcome="/kilometros_com_y_vacio.xhtml" />
                            
                         </p:submenu>
                     </p:menubar>
@@ -39,7 +40,12 @@
 
             <p:layoutUnit position="center">
                 <ui:insert name="body"/>
-                  <p>aqui la carreta </p>  
+               
+                <p align="center" >Instrucciones:</p>
+                              <p align="center">Para visualizar todos los datos incluidos en el reporte, elija la máxima capacidad de items por página;</p>
+                     <p align="center">Si desea descargar la información, haga click derecho en el mouse y elija  exportar a excel.</p>
+                     <p align="center">Tenga en cuenta que solo se descargará la cantidad de registros visualizados  por página.</p>
+                 
             </p:layoutUnit>
 
         </p:layout>

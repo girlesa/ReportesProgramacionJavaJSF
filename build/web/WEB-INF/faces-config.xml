@@ -12,5 +12,9 @@
             <base-name>/expedBundle</base-name>
             <var>expedBundle</var>
         </resource-bundle>
+        <resource-bundle>
+            <base-name>/kmsBundle</base-name>
+            <var>kmsBundle</var>
+        </resource-bundle>
     </application>
 </faces-config>

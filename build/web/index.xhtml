@@ -7,6 +7,7 @@
 
     <h:head>
         <title><ui:insert name="title">Reportes Programacion</ui:insert></title>
+        <h:outputStylesheet name="css/jsfcrud.css"/>
         <h:outputStylesheet library="css" name="jsfcrud.css"/>
         <h:outputScript library="js" name="jsfcrud.js"/>
     </h:head>
@@ -21,9 +22,9 @@
                     <p:menubar>
                         <p:menuitem value="#{bundle.Home}" outcome="/template" icon="ui-icon-home"/>
                         <p:submenu label="Elija Reporte">
-                              <p:menuitem value="Flota programada" outcome="/listado_buses.xhtml" />
-                              <p:menuitem value="Expediciones" outcome="/cantidad_expediciones.xhtml" />
-                             
+                            <p:menuitem value="Flota programada" outcome="/listado_buses.xhtml" />
+                            <p:menuitem value="Expediciones" outcome="/cantidad_expediciones.xhtml" />
+
                         </p:submenu>
                     </p:menubar>
                 </h:form>
@@ -31,19 +32,27 @@
 
             <p:layoutUnit position="south" size="120">
                 <ui:insert name="footer"/>
-                 <br>TRANSMILENIO SA</br> 
+                <br>TRANSMILENIO SA</br> 
                 <br>Dirección Técnica de Buses</br> 
                 <br>Autor: Ing. Girlesa Buitrago </br>  
-                 <p>2018 todos los derechos reservados </p>  
+                <p>2018 todos los derechos reservados </p>  
             </p:layoutUnit>
 
             <p:layoutUnit position="center">
                 <ui:insert name="body"/>
-                 <p>aqui la carreta </p>  
+
+                <p align="center" >Instrucciones:</p>
+                <p align="center">Para visualizar todos los datos incluidos en el reporte, elija la máxima capacidad de items por página;</p>
+                <p align="center">Si desea descargar la información, haga click derecho en el mouse y elija  exportar a excel.</p>
+                <p align="center">Tenga en cuenta que solo se descargará la cantidad de registros visualizados  por página.</p>
+
             </p:layoutUnit>
 
         </p:layout>
 
+        <br />
+        <h:link outcome="/historicoSumKMS/List" value="Show All HistoricoSumKMS Items"/>
     </h:body>
+
 
 </html>
