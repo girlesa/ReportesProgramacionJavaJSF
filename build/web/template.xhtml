@@ -10,13 +10,16 @@
         <h:outputStylesheet library="css" name="jsfcrud.css"/>
         <h:outputScript library="js" name="jsfcrud.js"/>
     </h:head>
+        
 
     <h:body>
-
+        
+        <p:layout fullPage="true">
+            
         <p:growl id="growl" life="3000" />
 
-        <p:layout fullPage="true">
-            <p:layoutUnit position="north" size="65" header="REPORTES PROGRAMACION">
+            <p:layoutUnit position="north" size="65" header="TRANSMILENIO S.A DTB">
+                  
                 <h:form id="menuForm">
                     <p:menubar>
                         <p:menuitem value="#{bundle.Home}" outcome="/template" icon="ui-icon-home"/>
@@ -25,6 +28,7 @@
                               <p:menuitem value="Expediciones" outcome="/cantidad_expediciones.xhtml" />
                               <p:menuitem value="Kilometraje" outcome="/kilometros_com_y_vacio.xhtml" />
                               <p:menuitem value="TabsPrueba" outcome="/tabTemplate.xhtml" />
+                               <p:menuitem value="paginaPrueba" url="http://localhost:8083/Reportes1/faces/HistoricoSumKms/index0.xhtml" />
                            
                         </p:submenu>
                     </p:menubar>

@@ -23,12 +23,14 @@
             </p:layoutUnit>
 
             <p:layoutUnit position="west" size="175" header="Left" collapsible="true">
-                <p:menu>
+                
+                    <p:menu>
                     <p:submenu label="Reportes Programación">
                         <p:menuitem value="Flota Programada" url="http://localhost:8083/Reportes1/faces/listado_buses.xhtml" />
-                        <p:menuitem value="Expediciones" url="http://www.primefaces.org/documentation.html" />
+                        <p:menuitem value="Expediciones" url="http://localhost:8083/Reportes1/faces/cantidad_expediciones.xhtml" />
                         <p:menuitem value="Kilómetraje " url="http://forum.primefaces.org/" />
                         <p:menuitem value="Histórico" url="http://www.primefaces.org/themes.html" />
+                      
 
                     </p:submenu>
 
@@ -37,14 +39,84 @@
             <p:layoutUnit position="center">
 
 
-                CONTENIDO DE PORTADA AQUI
+                  <p:panel header="#{bundle.PageName}">   
+                <p:dataTable value="#{listadoBusesFechaBean.listado}" var="fila" paginator="true" rowKey="#{item.id}" rows="50"  rowsPerPageTemplate="50,200,500,1000,100000" >
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="RC"/>
+                        </f:facet>
+                        <h:outputText value="#{fila[0]}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Tipologia"/>
+                        </f:facet>
+                        <h:outputText value="#{fila[1]}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Operador"/>
+                        </f:facet>
+                        <h:outputText value="#{fila[2]}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="ZONA"/>
+                        </f:facet>
+                        <h:outputText value="#{fila[3]}"/>
+                    </p:column>
+
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Linea"/>
+                        </f:facet>
+                        <h:outputText value="#{fila[4]}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Ruta_Com"/>
+                        </f:facet>
+                        <h:outputText value="#{fila[5]}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Fecha"/>
+                        </f:facet>
+                        <h:outputText value="#{fila[6]}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Tipo_Dia"/>
+                        </f:facet>
+                        <h:outputText value="#{fila[7]}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Mes"/>
+                        </f:facet>
+                        <h:outputText value="#{fila[8]}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Anio"/>
+                        </f:facet>
+                        <h:outputText value="#{fila[9]}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Conteo_Buses_Tipologia"/>
+                        </f:facet>
+                        <h:outputText value="#{fila[10]}"/>
+                    </p:column>
+                </p:dataTable>
+              </p:panel>
               
 
 
             </p:layoutUnit>
         </p:layout>
         <br />
-        <h:link outcome="/historicoCuentaExpediciones/List" value="Show All HistoricoCuentaExpediciones Items"/>
+       
     </h:body>
 
 

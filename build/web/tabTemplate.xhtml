@@ -12,7 +12,7 @@
         <p:panel header="REPORTES PROGRAMACION">  
             <h:panelGrid columns="2" cellpadding="10">
                 <p:button outcome="/template" value="VOLVER" icon="ui-icon-home" style="margin-right:20px;">
-                  </p:button>
+                </p:button>
             </h:panelGrid>
             <p:tabView>
 
@@ -247,6 +247,22 @@
 
             </p:tabView>
         </p:panel> 
+
+        <p:layoutUnit position="south" size="120">
+
+
+            <f:facet name="footer">
+                <p:commandButton id="createButton1" icon="ui-icon-plus"   value="CREAR PRUEBA"/>
+                 <p:commandButton id="viewButton1"   icon="ui-icon-search" value="BUSCAR PRUEBA" />
+                 <p:commandButton id="editButton1"   icon="ui-icon-pencil" value="EDITAR PRUEBA" />
+                <p:commandButton id="deleteButton1" icon="ui-icon-trash"  value="#{kmsBundle.Delete}" update="" disabled=""/>
+                <p:calendar id="fecha" pattern="MM/dd/yyyy" value="" title=""  showOn="button"/>
+            </f:facet>
+        </p:layoutUnit>
+
+
+
+
 
 
 
