@@ -34,9 +34,12 @@ public class HistoricoCuentaExpedicionesFacade extends AbstractFacade<HistoricoC
     
     public List ObtenerExpedicionesMes(){
         
-    Query q =em.createNativeQuery("SELECT  \"Linea\", \"Tipo_Evento\", \"Cuenta_expediciones\", \"Tipologia\", \"Operador\", \"RC\", \"Fecha\", \"Mes\", \"Tipo_dia\", \"Dia_Cal\"     \n" +
+    Query q =em.createNativeQuery("SELECT \"Linea\", \"Tipo_Evento\", \"Cuenta_expediciones\", \"Tipologia\", \"Operador\", \"RC\", \"Fecha\", \"Mes\", \"Tipo_dia\", \"Dia_Cal\"\n" +
 "  FROM public.\"Historico_Cuenta_Expediciones\"\n" +
-"  WHERE extract(year from \"Fecha\") =extract(year from current_date) and extract(month from \"Fecha\") =extract(month from current_date)-1");
+"   WHERE extract(year from \"Fecha\") =extract(year from current_date) and \"Fecha\" between (select max(\"Fecha\")-30 from \"Historico_Cuenta_Expediciones\" ) and (select max(\"Fecha\") from \"Historico_Cuenta_Expediciones\")--- (max(\"Fecha\")-1 and ('2018-10-31'))\n" +
+"");
+    
+    
     List<Object[]> listExp=q.getResultList();
     return listExp;
     

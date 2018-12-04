@@ -35,9 +35,10 @@ public class HistoricoCuentaBusesFacade extends AbstractFacade<HistoricoCuentaBu
     public List getBusesFecha(){
        
         Query q;
-        q = em.createNativeQuery("SELECT  \"RC\", \"Tipologia\", \"Operador\", \"ZONA\",\"Linea\", \"Ruta_Com\", \"Fecha\", \"Tipo_dia\", \"Mes\", \"Anio\", \"Conteo_Buses_Tipologia\" \n" +
-                "        FROM public.\"Historico_Cuenta_Buses\"\n" +
-                "  WHERE extract(year from \"Fecha\") =extract(year from current_date) and extract(month from \"Fecha\") =extract(month from current_date)-1");
+        q = em.createNativeQuery("SELECT \"ID\", \"RC\", \"Tipologia\", \"Operador\", \"ZONA\", \"Conteo_Buses_Tipologia\", \n" +
+"       \"Linea\", \"Ruta_Com\", \"Fecha\", \"Tipo_dia\", \"Mes\", \"Anio\", \"Cuenta\", \n" +
+"       \"Suma\"\n" +
+"  FROM public.\"Historico_Cuenta_Buses\" WHERE extract(year from \"Fecha\") =extract(year from current_date) and \"Fecha\" between (select max(\"Fecha\")-30 from \"Historico_Cuenta_Buses\" ) and (select max(\"Fecha\") from \"Historico_Cuenta_Buses\")");
         List<Object[]> listado=q.getResultList();
         return listado;    
      
