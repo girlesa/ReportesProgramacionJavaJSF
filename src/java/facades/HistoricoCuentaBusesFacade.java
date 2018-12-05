@@ -53,4 +53,17 @@ public class HistoricoCuentaBusesFacade extends AbstractFacade<HistoricoCuentaBu
         List<Object[]> listado=q.getResultList();
         return listado;
 }*/
+    
+    public List<HistoricoCuentaBuses> getBusesByString(String cadena){
+    
+       List<HistoricoCuentaBuses> listBusesStr;
+        Query q;
+        q=em.createNativeQuery("SELECT * FROM \"Historico_Cuenta_Buses\" where \"Operador\" ilike '%"+cadena+"%' and \"Fecha\" = '2018-10-31'",HistoricoCuentaBuses.class);
+        listBusesStr=q.getResultList();
+        
+        return listBusesStr;
+        
+    }    
 }
+
+    

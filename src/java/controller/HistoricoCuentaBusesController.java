@@ -24,7 +24,7 @@ import javax.faces.convert.FacesConverter;
 public class HistoricoCuentaBusesController implements Serializable {
 
     @EJB
-    private facades.HistoricoCuentaBusesFacade ejbFacade;
+    private HistoricoCuentaBusesFacade ejbFacade;
     private List<HistoricoCuentaBuses> items = null;
     private HistoricoCuentaBuses selected;
 
@@ -161,5 +161,14 @@ public class HistoricoCuentaBusesController implements Serializable {
         }
 
     }
+    
+  /* mETODO PARA PROBAR QUE FUNCIONA HASTA AQUI LA BUSQUEDA, POR CONSOLA
+public void probarMetodo(String cadena){
+        for(HistoricoCuentaBuses busesObj: ejbFacade.getBusesByString(cadena) )
+        {System.out.println(busesObj);
+        }
+    
+    
+    }*/
 
 }
