@@ -162,13 +162,13 @@ public class HistoricoCuentaBusesController implements Serializable {
 
     }
     
-  /* mETODO PARA PROBAR QUE FUNCIONA HASTA AQUI LA BUSQUEDA, POR CONSOLA
-public void probarMetodo(String cadena){
-        for(HistoricoCuentaBuses busesObj: ejbFacade.getBusesByString(cadena) )
-        {System.out.println(busesObj);
+  /* mETODO PARA PROBAR QUE FUNCIONA HASTA AQUI LA BUSQUEDA, POR CONSOLA*/
+public void probarMetodo(String cadena1,String cadena2){
+        for(HistoricoCuentaBuses busesObj2: ejbFacade.getBusesStr2(cadena1, cadena2) )
+        {System.out.println(busesObj2);
         }
     
     
-    }*/
+    }
 
 }

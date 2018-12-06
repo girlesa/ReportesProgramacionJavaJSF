@@ -27,6 +27,7 @@ public class Busqueda_especifica_Bean implements Serializable {
      */
     
     private String txtBuscar="";
+    
     private List<HistoricoCuentaBuses> listaBuses=new ArrayList<>();
     
     @EJB

@@ -43,27 +43,29 @@ public class HistoricoCuentaBusesFacade extends AbstractFacade<HistoricoCuentaBu
         return listado;    
      
     }
-    /*public List getBusesIntervalo(){
-       
-        Query q;
-        Date fechaInicial;
-        q = em.createNativeQuery("SELECT  \"RC\", \"Tipologia\", \"Operador\", \"ZONA\",\"Linea\", \"Ruta_Com\", \"Fecha\", \"Tipo_dia\", \"Mes\", \"Anio\", \"Conteo_Buses_Tipologia\" \n" +
-                "        FROM public.\"Historico_Cuenta_Buses\"\n" +
-                "  WHERE extract(year from \"Fecha\") =extract(year from current_date) and extract(month from \"Fecha\") =extract(month from current_date)-1");
-        List<Object[]> listado=q.getResultList();
-        return listado;
-}*/
+    
     
     public List<HistoricoCuentaBuses> getBusesByString(String cadena){
     
        List<HistoricoCuentaBuses> listBusesStr;
         Query q;
-        q=em.createNativeQuery("SELECT * FROM \"Historico_Cuenta_Buses\" where \"Operador\" ilike '%"+cadena+"%' and \"Fecha\" = '2018-10-31'",HistoricoCuentaBuses.class);
+      q=em.createNativeQuery("SELECT * FROM \"Historico_Cuenta_Buses\" where \"Operador\" ilike '%"+cadena+"%' and \"Fecha\" = '2018-10-31'",HistoricoCuentaBuses.class);
+      // q=em.createNativeQuery( " SELECT * FROM \"Historico_Cuenta_Buses\" where \"Operador\" ilike '%"+cadena+"%' and \"Ruta_Com\" ilike'%"+cadena1+"%'and \"Fecha\" = '2018-10-31'");
+        
+        
         listBusesStr=q.getResultList();
         
         return listBusesStr;
         
     }    
+    public List<HistoricoCuentaBuses> getBusesStr2(String cadena1,String cadena2){
+    
+    List<HistoricoCuentaBuses> listBusesStr2;
+    Query q2;
+    q2=em.createNativeQuery("SELECT * FROM \"Historico_Cuenta_Buses\" where \"Operador\" ilike '%"+cadena1+"%' and \"Ruta_Com\" ilike'%"+cadena2+"%'and \"Fecha\" = '2018-10-31'",HistoricoCuentaBuses.class);
+    listBusesStr2=q2.getResultList();
+    return listBusesStr2;
+    }
 }
 
     
