@@ -21,15 +21,25 @@
             <p:layoutUnit position="north" size="65" header="TRANSMILENIO S.A DTB">
                   
                 <h:form id="menuForm">
-                    <p:menubar>
+                   <p:menubar>
                         <p:menuitem value="#{bundle.Home}" outcome="/template" icon="ui-icon-home"/>
-                        <p:submenu label="Elija Reporte">
-                              <p:menuitem value="Flota programada" outcome="/listado_buses.xhtml" />
-                              <p:menuitem value="Expediciones" outcome="/cantidad_expediciones.xhtml" />
-                              <p:menuitem value="Kilometraje" outcome="/kilometros_com_y_vacio.xhtml" />
-                              <p:menuitem value="Vista Pestañas" outcome="/tabTemplate.xhtml" />
-                               <p:menuitem value="paginaPrueba" url="http://localhost:8083/Reportes1/faces/HistoricoSumKms/index0.xhtml" />
-                           
+                        <p:submenu label="REPORTES 30 DIAS">
+                            <p:menuitem value="Flota programada" outcome="/listado_buses.xhtml" />
+                            <p:menuitem value="Expediciones" outcome="/cantidad_expediciones.xhtml" />
+                            <p:menuitem value="Kilometraje" outcome="/kilometros_com_y_vacio.xhtml" />
+                            <p:menuitem value="Vista Pestañas" outcome="/tabTemplate.xhtml" />
+                          
+                        </p:submenu>
+                        <p:submenu label="CUADROS DE CONTROL">
+                            
+                            <p:menuitem value="FLOTA PROGRAMADA" url="https://datastudio.google.com/open/1J5fQVsM0_PcKO0p_Y_gVqsFjTsgdlUkA" />
+                            <p:menuitem value="EXPEDICIONES" url="https://datastudio.google.com/open/1iQSZnPgvWQRhoaS4seXGShL5pw3DmZ2w" />
+                            <p:menuitem value="KILOMETRAJE" url="https://datastudio.google.com/open/1u43fD7tcc1TsjiASyytWjNodQpykAd3b" />
+                        </p:submenu>
+                         <p:submenu label="BUSQUEDAS">
+                            
+                             <p:menuitem value="Consulta por Operador" outcome="/consulta_Especifica.xhtml" />
+                           <p:menuitem value="Consulta por Operador y Ruta Comercial" outcome="/consultar_tipologia_operador.xhtml" />
                         </p:submenu>
                     </p:menubar>
                 
@@ -51,7 +61,7 @@
                 <p align="center" >Instrucciones:</p>
                               <p align="center">Para visualizar todos los datos incluidos en el reporte, elija la máxima capacidad de items por página;</p>
                      <p align="center">Si desea descargar la información, haga click derecho en el mouse y elija  exportar a excel.</p>
-                     <p align="center">Tenga en cuenta que solo se descargará la cantidad de registros visualizados  por página.</p>
+                     <p align="center">Tenga en cuenta que solo se descargará la cantidad de registros visualizados  por página. Para  ver los cuadros de control, ingrese al link con su cuenta de gmail.com</p>
                  
             </p:layoutUnit>
 
