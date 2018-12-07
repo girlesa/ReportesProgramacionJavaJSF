@@ -175,8 +175,8 @@ public void probarMetodo(String cadena1,String cadena2){
    
 
     
-    public void probarMetodoFecha(String fecha1,String fecha2){
-        for(HistoricoCuentaBuses busesObjFecha: ejbFacade.consultarBusesFecha2(fecha1,fecha2) )
+    public void probarMetodoFecha(Date date1,Date date2){
+        for(HistoricoCuentaBuses busesObjFecha: ejbFacade.consultarBusesFecha2(date1,date2) )
         {System.out.println(busesObjFecha);
         }
     

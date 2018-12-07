@@ -26,28 +26,28 @@ public class Busqueda_Buses_Fecha_Bean implements Serializable {
     /**
      * Creates a new instance of Busqueda_Buses_Fecha
      */
-     private String fecha1_Buscar="";
-    private String fecha2_a_buscar="";
+     private Date date1_Buscar;
+    private Date datea2_a_buscar;
     private List<HistoricoCuentaBuses> listaFecha= new ArrayList<>();
             
     
      @EJB
     private HistoricoCuentaBusesFacade connFacade;
 
-    public String getFecha1_Buscar() {
-        return fecha1_Buscar;
+    public Date getFecha1_Buscar() {
+        return date1_Buscar;
     }
 
     public void setFecha1_Buscar(String fecha1_Buscar) {
-        this.fecha1_Buscar = fecha1_Buscar;
+        this.date1_Buscar = date1_Buscar;
     }
 
-    public String getFecha2_a_buscar() {
-        return fecha2_a_buscar;
+    public Date getFecha2_a_buscar() {
+        return datea2_a_buscar;
     }
 
     public void setFecha2_a_buscar(String fecha2_a_buscar) {
-        this.fecha2_a_buscar = fecha2_a_buscar;
+        this.datea2_a_buscar = datea2_a_buscar;
     }
 
     public List<HistoricoCuentaBuses> getListaFecha() {
@@ -60,7 +60,7 @@ public class Busqueda_Buses_Fecha_Bean implements Serializable {
     public Busqueda_Buses_Fecha_Bean() {
     }
     public void llenarBusesFecha(){
-        listaFecha=connFacade.consultarBusesFecha2(fecha1_Buscar, fecha1_Buscar);
+        listaFecha=connFacade.consultarBusesFecha2(date1_Buscar, datea2_a_buscar);
         
     
     }
