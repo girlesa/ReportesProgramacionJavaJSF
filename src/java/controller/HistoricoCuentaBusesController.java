@@ -6,6 +6,7 @@ import controller.util.JsfUtil.PersistAction;
 import facades.HistoricoCuentaBusesFacade;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -162,10 +163,21 @@ public class HistoricoCuentaBusesController implements Serializable {
 
     }
     
-  /* mETODO PARA PROBAR QUE FUNCIONA HASTA AQUI LA BUSQUEDA, POR CONSOLA*/
+  /* mETODO PARA PROBAR QUE FUNCIONA HASTA AQUI LA BUSQUEDA, POR CONSOLA
 public void probarMetodo(String cadena1,String cadena2){
         for(HistoricoCuentaBuses busesObj2: ejbFacade.getBusesStr2(cadena1, cadena2) )
         {System.out.println(busesObj2);
+        }
+    
+    
+    }*/
+
+   
+
+    
+    public void probarMetodoFecha(String fecha1,String fecha2){
+        for(HistoricoCuentaBuses busesObjFecha: ejbFacade.consultarBusesFecha2(fecha1,fecha2) )
+        {System.out.println(busesObjFecha);
         }
     
     

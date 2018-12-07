@@ -47,54 +47,33 @@
                     </style>
 
                     <p:panelGrid id="display" columns="2" columnClasses="label,value">
-                        <h:form id="form">
+                         <h:form id="form">
 
                             <p:growl id="msgs" showDetail="true" />
 
 
-                            <p:outputLabel for="button" value="Desde:" />
-                            <p:calendar id="button" value="#{calendarView.date3}" showOn="button" />
-
-
-
-
-                            <p:commandButton value="OK" update="msgs" action="#{calendarView.click}" icon="pi pi-check" />
+                            <p:outputLabel for="button1" value="Desde:" />
+                            <p:calendar id="button1" value="#{calendarView.date1}" showOn="button" />
+                            <p:outputLabel for="button2" value="Hasta:" />
+                            <p:calendar id="button2" value="#{calendarView.date2}" showOn="button" />
 
                             <p:dialog modal="true" resizable="false" header="Values" widgetVar="dlg" showEffect="fold">
-
-
                                 <h:outputText value="Button:" />
-                                <h:outputText value="#{calendarView.date3}">
+
+                                <h:outputText value="#{calendarView.date1}">
                                     <f:convertDateTime pattern="MM/dd/yyyy" />
                                 </h:outputText>
 
+                                <h:outputText value="Button:" />
 
+                                <h:outputText value="#{calendarView.date2}">
+                                    <f:convertDateTime pattern="MM/dd/yyyy" />
+                                </h:outputText>
                             </p:dialog>
-
-                        </h:form>
-
-                        <h:form id="form2">
-                            <p:growl id="msgs" showDetail="true" />
-
-
-                            <p:outputLabel for="button" value="Hasta:" />
-                            <p:calendar id="button" value="#{calendarView.date3}" showOn="button" />
-
-
-
 
                             <p:commandButton value="OK" update="msgs" action="#{calendarView.click}" icon="pi pi-check" />
 
-                            <p:dialog modal="true" resizable="false" header="Values" widgetVar="dlg" showEffect="fold">
-                                <p:panelGrid id="display" columns="2" columnClasses="label,value">
 
-                                    <h:outputText value="Button:" />
-                                    <h:outputText value="#{calendarView.date3}">
-                                        <f:convertDateTime pattern="MM/dd/yyyy" />
-                                    </h:outputText>
-
-                                </p:panelGrid>
-                            </p:dialog>
                         </h:form>
                     </p:panelGrid>
 
