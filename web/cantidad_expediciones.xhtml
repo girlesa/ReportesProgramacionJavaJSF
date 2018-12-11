@@ -9,147 +9,96 @@
     <ui:composition template="/template.xhtml">
         <ui:define name="body" >
             <h:body>
+
                 <p:panel header="#{expedBundle.PageName}">  
+
+                    <h:form>
+                        <p:outputLabel value="Ingrese Operador"/>
+                        <p:inputText value="#{busqueda_Operador_Ruta_Comercial_Bean.txtOperador_a_buscar}"/>
+                        <p:outputLabel value="Ingrese Ruta_Comercial"/>
+                        <p:inputText value="#{busqueda_Operador_Ruta_Comercial_Bean.txtRuta_com_a_buscar}"/>
+                        <p:commandButton value="Buscar" action="#{busqueda_Operador_Ruta_Comercial_Bean.llenarBuses2()}" update="tblExped"/>
+                        <h:commandLink>
+                            <p:graphicImage url="./../resources/images/csv.png" width="24"/>
+                            <p:dataExporter type="csv" target="tblExped" fileName="Expediciones" />
+                        </h:commandLink>
+
+
+
+
+
+
+                        <p:dataTable id="tblExped" value="#{listadoExpedicionesPeriodo.listExp}" var="fila" paginator="true" rowKey="#{item.id}" rows="100"  rowsPerPageTemplate="50,200,500,1000,100000" >
+                            <p:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Linea"/>
+                                </f:facet>
+                                <h:outputText value="#{fila[0]}"/>
+                            </p:column>
+                            <p:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Tipo Evento"/>
+                                </f:facet>
+                                <h:outputText value="#{fila[1]}"/>
+                            </p:column>
+                            <p:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Cuenta de expediciones"/>
+                                </f:facet>
+                                <h:outputText value="#{fila[2]}"/>
+                            </p:column>
+                            <p:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Tipologia"/>
+                                </f:facet>
+                                <h:outputText value="#{fila[3]}"/>
+                            </p:column>
+
+                            <p:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Operador"/>
+                                </f:facet>
+                                <h:outputText value="#{fila[4]}"/>
+                            </p:column>
+                            <p:column>
+                                <f:facet name="header">
+                                    <h:outputText value="RC"/>
+                                </f:facet>
+                                <h:outputText value="#{fila[5]}"/>
+                            </p:column>
+                            <p:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Fecha"/>
+                                </f:facet>
+                                <h:outputText value="#{fila[6]}"/>
+                            </p:column>
+                            <p:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Mes"/>
+                                </f:facet>
+                                <h:outputText value="#{fila[7]}"/>
+                            </p:column>
+                            <p:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Tipo Dia"/>
+                                </f:facet>
+                                <h:outputText value="#{fila[8]}"/>
+                            </p:column>
+                            <p:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Dia Calendario"/>
+                                </f:facet>
+                                <h:outputText value="#{fila[9]}"/>
+                            </p:column>
+
+                        </p:dataTable>
+                        
+                 </h:form>
+                      </p:panel> 
                
-                       <script type="text/javascript">
-                        PrimeFaces.locales['de'] = {
-                            closeText: 'Schließen',
-                            prevText: 'Zurück',
-                            nextText: 'Weiter',
-                            monthNames: ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'],
-                            monthNamesShort: ['Jan', 'Feb', 'März', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dez'],
-                            dayNames: ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag'],
-                            dayNamesShort: ['Son', 'Mon', 'Die', 'Mit', 'Don', 'Fre', 'Sam'],
-                            dayNamesMin: ['S', 'M', 'D', 'M ', 'D', 'F ', 'S'],
-                            weekHeader: 'Woche',
-                            FirstDay: 1,
-                            isRTL: false,
-                            showMonthAfterYear: false,
-                            yearSuffix: '',
-                            timeOnlyTitle: 'Nur Zeit',
-                            timeText: 'Zeit',
-                            hourText: 'Stunde',
-                            minuteText: 'Minute',
-                            secondText: 'Sekunde',
-                            currentText: 'Aktuelles Datum',
-                            ampm: false,
-                            month: 'Monat',
-                            week: 'Woche',
-                            day: 'Tag',
-                            allDayText: 'Ganzer Tag'
-                        };
-                    </script>
 
-                    <style type="text/css">
-                        .value {
-                            font-weight: bold;
-                        }
-                    </style>
-
-                    <p:panelGrid id="display" columns="2" columnClasses="label,value">
-                         <h:form id="form">
-
-                            <p:growl id="msgs" showDetail="true" />
-
-
-                            <p:outputLabel for="button1" value="Desde:" />
-                            <p:calendar id="button1" value="#{calendarView.date1}" showOn="button" />
-                            <p:outputLabel for="button2" value="Hasta:" />
-                            <p:calendar id="button2" value="#{calendarView.date2}" showOn="button" />
-
-                            <p:dialog modal="true" resizable="false" header="Values" widgetVar="dlg" showEffect="fold">
-                                <h:outputText value="Button:" />
-
-                                <h:outputText value="#{calendarView.date1}">
-                                    <f:convertDateTime pattern="MM/dd/yyyy" />
-                                </h:outputText>
-
-                                <h:outputText value="Button:" />
-
-                                <h:outputText value="#{calendarView.date2}">
-                                    <f:convertDateTime pattern="MM/dd/yyyy" />
-                                </h:outputText>
-                            </p:dialog>
-
-                            <p:commandButton value="OK" update="msgs" action="#{calendarView.click}" icon="pi pi-check" />
-
-
-                        </h:form>
-                    </p:panelGrid>
-
-
-                    
-                    <p:dataTable value="#{listadoExpedicionesPeriodo.listExp}" var="fila"
-                             paginator="true"
-                                 rowKey="#{item.id}"
-                                 rows="30"
-                                 rowsPerPageTemplate="50,200,500,1000,5000"> 
-                    <p:column>
-                        <f:facet name="header">
-                            <h:outputText value="Linea"/>
-                        </f:facet>
-                        <h:outputText value="#{fila[0]}"/>
-                    </p:column>
-                    <p:column>
-                        <f:facet name="header">
-                            <h:outputText value="Tipo Evento"/>
-                        </f:facet>
-                        <h:outputText value="#{fila[1]}"/>
-                    </p:column>
-                    <p:column>
-                        <f:facet name="header">
-                            <h:outputText value="Cuenta de expediciones"/>
-                        </f:facet>
-                        <h:outputText value="#{fila[2]}"/>
-                    </p:column>
-                    <p:column>
-                        <f:facet name="header">
-                            <h:outputText value="Tipologia"/>
-                        </f:facet>
-                        <h:outputText value="#{fila[3]}"/>
-                    </p:column>
-
-                    <p:column>
-                        <f:facet name="header">
-                            <h:outputText value="Operador"/>
-                        </f:facet>
-                        <h:outputText value="#{fila[4]}"/>
-                    </p:column>
-                    <p:column>
-                        <f:facet name="header">
-                            <h:outputText value="RC"/>
-                        </f:facet>
-                        <h:outputText value="#{fila[5]}"/>
-                    </p:column>
-                    <p:column>
-                        <f:facet name="header">
-                            <h:outputText value="Fecha"/>
-                        </f:facet>
-                        <h:outputText value="#{fila[6]}"/>
-                    </p:column>
-                    <p:column>
-                        <f:facet name="header">
-                            <h:outputText value="Mes"/>
-                        </f:facet>
-                        <h:outputText value="#{fila[7]}"/>
-                    </p:column>
-                    <p:column>
-                        <f:facet name="header">
-                            <h:outputText value="Tipo Dia"/>
-                        </f:facet>
-                        <h:outputText value="#{fila[8]}"/>
-                    </p:column>
-                    <p:column>
-                        <f:facet name="header">
-                            <h:outputText value="Dia Calendario"/>
-                        </f:facet>
-                        <h:outputText value="#{fila[9]}"/>
-                    </p:column>
-
-                </p:dataTable>
-                    </p:panel> 
-              
             </h:body>
+            
         </ui:define>
     </ui:composition>
 </html>

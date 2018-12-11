@@ -8,8 +8,10 @@ package controller;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.annotation.ManagedBean;
+import javax.enterprise.context.SessionScoped;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
+import org.jboss.weld.util.LazyValueHolder.Serializable;
 import org.primefaces.event.SelectEvent;
 
 /**
@@ -17,7 +19,8 @@ import org.primefaces.event.SelectEvent;
  * @author girlesa.buitrago
  */
 @ManagedBean
-public class CalendarView {
+@SessionScoped
+public class CalendarView extends Serializable {
    
          
     private Date date1;
@@ -49,6 +52,11 @@ public class CalendarView {
  
     public void setDate2(Date date2) {
         this.date2 = date2;
+    }
+
+    @Override
+    protected Object computeValue() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
  
    

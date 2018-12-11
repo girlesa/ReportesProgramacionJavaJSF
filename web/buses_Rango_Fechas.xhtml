@@ -1,0 +1,114 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <f:view contentType="text/html">
+        <h:head>
+            <f:facet name="first">
+                <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
+                <title>Validar rango de fechas</title>
+            </f:facet>
+        </h:head>
+        <h:body>
+
+            <h:form>
+                <h:panelGrid id="grid" columns="1" cellpadding="1">
+                    <p:messages id="messages" showDetail="true" autoUpdate="true" closable="true" />
+
+                    <p:outputLabel for="fechaInicio" value="Fecha Inicio" />
+                    <p:calendar id="fechaInicio" value="#{calendarViewPrueba.date1_a_buscar}" showOn="button" />    
+
+                     <p:outputLabel for="fechaFin" value="Fecha Fin" />
+                     <p:calendar id="fechaFin" value="#{calendarViewPrueba.date2_a_buscar}" showOn="button" />    
+
+                     <p:commandButton value="ListadoBuses" actionListener="#{calendarViewPrueba.llenarBusesFecha()}" />
+                </h:panelGrid>
+                    <p:panel>
+
+                        <p:dataTable id="tblBuses" value="#{busqueda_Buses_Fecha_Bean.listaFecha}" var="bus" paginator="true" rowKey="#{item.id}" rows="100"  rowsPerPageTemplate="50,200,500,1000,100000" >
+                            <p:column>
+                                <f:facet name="header">
+                                    <h:outputText value="ID"/>
+                                </f:facet>
+                                <h:outputText value="#{bus.id}"/>
+                            </p:column>
+
+                            <p:column>
+                                <f:facet name="header">
+                                    <h:outputText value="RC"/>
+                                </f:facet>
+                                <h:outputText value="#{bus.rc}"/>
+                            </p:column>
+                            <p:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Tipologia"/>
+                                </f:facet>
+                                <h:outputText value="#{bus.tipologia}"/>
+                            </p:column>
+                            <p:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Operador"/>
+                                </f:facet>
+                                <h:outputText value="#{bus.operador}"/>
+                            </p:column>
+                            <p:column>
+                                <f:facet name="header">
+                                    <h:outputText value="ZONA"/>
+                                </f:facet>
+                                <h:outputText value="#{bus.zona}"/>
+                            </p:column>
+                            <p:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Conteo de Buses por Tipologia"/>
+                                </f:facet>
+                                <h:outputText value="#{bus.conteoBusesTipologia}"/>
+                            </p:column>
+
+                            <p:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Linea"/>
+                                </f:facet>
+                                <h:outputText value="#{bus.linea}"/>
+                            </p:column>
+                            <p:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Ruta Comercial"/>
+                                </f:facet>
+                                <h:outputText value="#{bus.rutaCom}"/>
+                            </p:column>
+                            <p:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Fecha"/>
+                                </f:facet>
+                                <h:outputText value="#{bus.fecha}"/>
+
+                            </p:column>
+                            <p:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Tipo Dia"/>
+                                </f:facet>
+                                <h:outputText value="#{bus.tipodia}"/>
+                            </p:column>
+                            <p:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Mes"/>
+                                </f:facet>
+                                <h:outputText value="#{bus.mes}"/>
+                            </p:column>
+                            <p:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Año"/>
+                                </f:facet>
+                                <h:outputText value="#{bus.anio}"/>
+                            </p:column>
+
+                        </p:dataTable>
+                    </p:panel>
+                </h:form>
+           </h:body>
+
+    </f:view>
+</html>

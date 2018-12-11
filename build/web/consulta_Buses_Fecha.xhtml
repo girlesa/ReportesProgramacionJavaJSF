@@ -12,131 +12,139 @@
     <ui:composition template="/template.xhtml">
         <ui:define name="body" >
 
+
             <h:body>
-                <h:panelGrid columns="1" cellpadding="5">
+                <p:panel header="#{bundle.PageName}">  
+                    <h:panelGrid columns="1" cellpadding="5">
 
-                    <p:commandButton value="!!!!ALERTA!!!!PAGINA EN CONSTRUCCIÓN....CLICK AQUI...PARA INFORMACIÓN" type="button" onclick="PF('dlg3').show();" /> 
-                </h:panelGrid>
-
-
-                <p:dialog header="PÁGINA EN CONSTRUCCIÓN..DISCULPE LAS MOLESTIAS" widgetVar="dlg3" showEffect="explode" hideEffect="bounce" height="300">
-                    <h:outputText value="Pronto terminaremos la implementación de las fechas
-                                  
-                                  Para instrucciones de su construcción, escriba al correo..girlesa@gmail.com." />
-                </p:dialog>
+                        <p:commandButton value="!!!!NO UBIQUE FECHAS MUY AMPLIAS !!!" type="button" onclick="PF('dlg3').show();" /> 
+                    </h:panelGrid>
 
 
-                <h:form id="form">
-
-                    <p:growl id="msgs" showDetail="true" />
-
-
-                    <p:outputLabel for="button1" value="Desde:" />
-                    <p:calendar id="button1" value="#{calendarView.date1}" showOn="button" />
-                    <p:outputLabel for="button2" value="Hasta:" />
-                    <p:calendar id="button2" value="#{calendarView.date2}" showOn="button" />
-
-                    <p:dialog modal="true" resizable="false" header="Values" widgetVar="dlg" showEffect="fold">
-                        <h:outputText value="Button:" />
-
-                        <h:outputText value="#{calendarView.date1}">
-                            <f:convertDateTime pattern="MM/dd/yyyy" />
-                        </h:outputText>
-
-                        <h:outputText value="Button:" />
-
-                        <h:outputText value="#{calendarView.date2}">
-                            <f:convertDateTime pattern="MM/dd/yyyy" />
-                        </h:outputText>
+                    <p:dialog header="INFORMACIÓN CONSULTAS...MEMORIA?" widgetVar="dlg3" showEffect="explode" hideEffect="bounce" height="100">
+                        <h:outputText value="Si tiene poca memoria, elija rango de fechas cortas" />
                     </p:dialog>
 
-                    <p:commandButton value="OK" update="msgs" action="#{calendarViewPrueba.listaBusesFecha}" icon="pi pi-check" />
-                    <p:commandButton value="Buscar" action="#{calendarViewPrueba.llenarBusesFecha()}" update="tblBuses"/>
+
+                    <h:form id="form">
+
+                        <p:growl id="msgs" showDetail="true" />
 
 
+                        <p:outputLabel for="button1" value="Desde:" />
+                        <p:calendar id="button1" value="#{calendarBean.date1}" showOn="button" />
 
-                    <p:panel>
+                        <p:outputLabel for="button2" value="Hasta:" />
+                        <p:calendar id="button2" value="#{calendarBean.date2}" showOn="button" />
 
-                        <p:dataTable id="tblBuses" value="#{busqueda_Buses_Fecha_Bean.listaFecha}" var="bus" paginator="true" rowKey="#{item.id}" rows="100"  rowsPerPageTemplate="50,200,500,1000,100000" >
-                            <p:column>
-                                <f:facet name="header">
-                                    <h:outputText value="ID"/>
-                                </f:facet>
-                                <h:outputText value="#{bus.id}"/>
-                            </p:column>
 
-                            <p:column>
-                                <f:facet name="header">
-                                    <h:outputText value="RC"/>
-                                </f:facet>
-                                <h:outputText value="#{bus.rc}"/>
-                            </p:column>
-                            <p:column>
-                                <f:facet name="header">
-                                    <h:outputText value="Tipologia"/>
-                                </f:facet>
-                                <h:outputText value="#{bus.tipologia}"/>
-                            </p:column>
-                            <p:column>
-                                <f:facet name="header">
-                                    <h:outputText value="Operador"/>
-                                </f:facet>
-                                <h:outputText value="#{bus.operador}"/>
-                            </p:column>
-                            <p:column>
-                                <f:facet name="header">
-                                    <h:outputText value="ZONA"/>
-                                </f:facet>
-                                <h:outputText value="#{bus.zona}"/>
-                            </p:column>
-                            <p:column>
-                                <f:facet name="header">
-                                    <h:outputText value="Conteo de Buses por Tipologia"/>
-                                </f:facet>
-                                <h:outputText value="#{bus.conteoBusesTipologia}"/>
-                            </p:column>
+                        <p:dialog modal="true" resizable="false" header="Values" widgetVar="dlg" showEffect="fold">
+                            <h:outputText value="Button:" />
 
-                            <p:column>
-                                <f:facet name="header">
-                                    <h:outputText value="Linea"/>
-                                </f:facet>
-                                <h:outputText value="#{bus.linea}"/>
-                            </p:column>
-                            <p:column>
-                                <f:facet name="header">
-                                    <h:outputText value="Ruta Comercial"/>
-                                </f:facet>
-                                <h:outputText value="#{bus.rutaCom}"/>
-                            </p:column>
-                            <p:column>
-                                <f:facet name="header">
-                                    <h:outputText value="Fecha"/>
-                                </f:facet>
-                                <h:outputText value="#{bus.fecha}"/>
+                            <h:outputText value="#{calendarBean.date1}">
+                                <f:convertDateTime pattern="dd/MM/yyyyd" />
+                            </h:outputText>
 
-                            </p:column>
-                            <p:column>
-                                <f:facet name="header">
-                                    <h:outputText value="Tipo Dia"/>
-                                </f:facet>
-                                <h:outputText value="#{bus.tipodia}"/>
-                            </p:column>
-                            <p:column>
-                                <f:facet name="header">
-                                    <h:outputText value="Mes"/>
-                                </f:facet>
-                                <h:outputText value="#{bus.mes}"/>
-                            </p:column>
-                            <p:column>
-                                <f:facet name="header">
-                                    <h:outputText value="Año"/>
-                                </f:facet>
-                                <h:outputText value="#{bus.anio}"/>
-                            </p:column>
+                            <h:outputText value="Button:" />
 
-                        </p:dataTable>
-                    </p:panel>
-                </h:form>
+                            <h:outputText value="#{calendarBean.date2}">
+                                <f:convertDateTime pattern="dd/MM/yyyy" />
+                            </h:outputText>
+                        </p:dialog>
+
+
+                        <p:commandButton value="Buscar" action="#{calendarBean.llenarBusesFecha()}" update="tblBuses"/>
+
+                        <h:commandLink>
+                             <br/>
+                            <p:outputLabel value="descargar"  />
+                            <p:graphicImage url="./../resources/images/csv.png" width="24"/>
+                            <p:dataExporter type="csv" target="tblBuses" fileName="FlotaProgramadaFecha" />
+                        </h:commandLink>
+
+                        <p:panel>
+
+                            <p:dataTable id="tblBuses" value="#{calendarBean.listBusesFecha}" var="bus" paginator="true" rowKey="#{item.id}" rows="100"  rowsPerPageTemplate="50,200,500,1000,100000" >
+                                <p:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="ID"/>
+                                    </f:facet>
+                                    <h:outputText value="#{bus.id}"/>
+                                </p:column>
+
+                                <p:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="RC"/>
+                                    </f:facet>
+                                    <h:outputText value="#{bus.rc}"/>
+                                </p:column>
+                                <p:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="Tipologia"/>
+                                    </f:facet>
+                                    <h:outputText value="#{bus.tipologia}"/>
+                                </p:column>
+                                <p:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="Operador"/>
+                                    </f:facet>
+                                    <h:outputText value="#{bus.operador}"/>
+                                </p:column>
+                                <p:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="ZONA"/>
+                                    </f:facet>
+                                    <h:outputText value="#{bus.zona}"/>
+                                </p:column>
+                                <p:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="Conteo de Buses por Tipologia"/>
+                                    </f:facet>
+                                    <h:outputText value="#{bus.conteoBusesTipologia}"/>
+                                </p:column>
+
+                                <p:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="Linea"/>
+                                    </f:facet>
+                                    <h:outputText value="#{bus.linea}"/>
+                                </p:column>
+                                <p:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="Ruta Comercial"/>
+                                    </f:facet>
+                                    <h:outputText value="#{bus.rutaCom}"/>
+                                </p:column>
+                                <p:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="Fecha"/>
+                                    </f:facet>
+                                    <h:outputText value="#{bus.fecha}"/>
+
+                                </p:column>
+                                <p:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="Tipo Dia"/>
+                                    </f:facet>
+                                    <h:outputText value="#{bus.tipodia}"/>
+                                </p:column>
+                                <p:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="Mes"/>
+                                    </f:facet>
+                                    <h:outputText value="#{bus.mes}"/>
+                                </p:column>
+                                <p:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="Año"/>
+                                    </f:facet>
+                                    <h:outputText value="#{bus.anio}"/>
+                                </p:column>
+
+                            </p:dataTable>
+                        </p:panel>
+                    </h:form>
+                </p:panel>
             </h:body> 
         </ui:define>
     </ui:composition>

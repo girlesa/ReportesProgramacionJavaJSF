@@ -71,9 +71,18 @@ public class HistoricoCuentaBusesFacade extends AbstractFacade<HistoricoCuentaBu
         
          List<HistoricoCuentaBuses> listBusesFecha;
          Query q3;
-         q3=em.createNativeQuery("select * from \"Historico_Cuenta_Buses\" where \"Fecha\" between '"+date1+"' and '"+date2+"'");
+         q3=em.createNativeQuery("select * from \"Historico_Cuenta_Buses\" where \"Fecha\" between '"+date1+"' and '"+date2+"'",HistoricoCuentaBuses.class);
          listBusesFecha=q3.getResultList();
          return listBusesFecha;
+        
+    }
+    public List<HistoricoCuentaBuses> consultarBusesFecha3(String fecha1,String fecha2){
+        
+         List<HistoricoCuentaBuses> listBusesFecha3;
+         Query q4;
+         q4=em.createNativeQuery("select * from \"Historico_Cuenta_Buses\" where \"Fecha\" between '"+fecha1+"' and '"+fecha2+"'",HistoricoCuentaBuses.class);
+         listBusesFecha3=q4.getResultList();
+         return listBusesFecha3;
         
     }
 }

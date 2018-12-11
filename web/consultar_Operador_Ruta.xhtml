@@ -17,7 +17,11 @@
             <p:outputLabel value="Ingrese Ruta_Comercial"/>
             <p:inputText value="#{busqueda_Operador_Ruta_Comercial_Bean.txtRuta_com_a_buscar}"/>
             <p:commandButton value="Buscar" action="#{busqueda_Operador_Ruta_Comercial_Bean.llenarBuses2()}" update="tblBuses"/>
-
+            <h:commandLink>
+                    <p:graphicImage url="./../resources/images/csv.png" width="24"/>
+                    <p:dataExporter type="csv" target="tblBuses" fileName="FlotaProgramada" />
+            </h:commandLink>
+          
             <p:panel>
 
                 <p:dataTable id="tblBuses" value="#{busqueda_Operador_Ruta_Comercial_Bean.lista2}" var="bus" paginator="true" rowKey="#{item.id}" rows="100"  rowsPerPageTemplate="50,200,500,1000,100000" >
