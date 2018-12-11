@@ -15,7 +15,7 @@
 
             <h:body>
                 <p:panel header="#{bundle.PageName}">  
-                    <h:panelGrid columns="1" cellpadding="5">
+                    <h:panelGrid columns="1" >
 
                         <p:commandButton value="!!!!NO UBIQUE FECHAS MUY AMPLIAS !!!" type="button" onclick="PF('dlg3').show();" /> 
                     </h:panelGrid>
@@ -54,10 +54,9 @@
 
 
                         <p:commandButton value="Buscar" action="#{calendarBean.llenarBusesFecha()}" update="tblBuses"/>
-
+                        <p:outputLabel value="descargar"  />
                         <h:commandLink>
-                             <br/>
-                            <p:outputLabel value="descargar"  />
+                           
                             <p:graphicImage url="./../resources/images/csv.png" width="24"/>
                             <p:dataExporter type="csv" target="tblBuses" fileName="FlotaProgramadaFecha" />
                         </h:commandLink>
