@@ -11,8 +11,22 @@
     <ui:composition template="/template.xhtml">
         <ui:define name="body" >
             <h:body>
+                <p:panel header="#{expedBundle.PageName}"> 
+                      
+                   
 
                 <h:form>
+                     <p:growl id="msgs" showDetail="true" />
+                    <h:panelGrid columns="1" >
+
+                        <p:commandButton value="!!!!DEBE LLENAR FECHA INICIAL Y FINAL !!!" type="button" onclick="PF('dlg3').show();" /> 
+                    </h:panelGrid>
+
+
+                    <p:dialog header="INFORMACIÓN CONSULTAS VS MEMORIA" widgetVar="dlg3" showEffect="explode" hideEffect="bounce" height="100">
+                        <h:outputText value="Si tiene poca memoria, elija rango de fechas cortas.  Esta información depende de  la última actualización en la  base de datos de programación" />
+                    </p:dialog>
+
                     <p:outputLabel for="button3" value="Desde:" />
                     <p:calendar id="button3" value="#{expedCalendarBean.date1}" showOn="button" locale= "co" navigator="True" pattern="yyyy-MM-dd" />
                     <p:outputLabel for="button4" value="Hasta:" />
@@ -125,7 +139,7 @@
                 </h:form>
                 
 
-
+</p:panel>
 
             </h:body>
         </ui:define>

@@ -15,7 +15,9 @@
 
             <h:body>
                 <p:panel header="#{bundle.PageName}">  
-                    <h:panelGrid columns="1" >
+                  
+                    <h:form>
+                          <h:panelGrid columns="1" >
 
                         <p:commandButton value="!!!!DEBE LLENAR FECHA INICIAL Y FINAL !!!" type="button" onclick="PF('dlg3').show();" /> 
                     </h:panelGrid>
@@ -30,7 +32,6 @@
 
                     <p:growl id="msgs" showDetail="true" />
 
-                    <h:form>
                         <p:outputLabel for="button1" value="Desde:" />
                         <p:calendar id="button1" value="#{calendarBean.date1}" showOn="button" locale= "co" navigator="True" pattern="yyyy-MM-dd" />
                         <p:outputLabel for="button2" value="Hasta:" />
