@@ -13,8 +13,9 @@
 .ui-widget-header {
     text-align: center;
     text-transform: uppercase;
-    color:  blue;
-    background-color: red;
+    color:  cadetblue;
+    background-color: black;
+    
 }
 .ui-button {
     margin-top: 10px !important;

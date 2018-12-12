@@ -13,14 +13,11 @@
                 <p:panel header="#{expedBundle.PageName}">  
 
                     <h:form>
-                        <p:outputLabel value="Ingrese Operador"/>
-                        <p:inputText value="#{busqueda_Operador_Ruta_Comercial_Bean.txtOperador_a_buscar}"/>
-                        <p:outputLabel value="Ingrese Ruta_Comercial"/>
-                        <p:inputText value="#{busqueda_Operador_Ruta_Comercial_Bean.txtRuta_com_a_buscar}"/>
-                        <p:commandButton value="Buscar" action="#{busqueda_Operador_Ruta_Comercial_Bean.llenarBuses2()}" update="tblExped"/>
+                       
                         <h:commandLink>
                             <p:graphicImage url="./../resources/images/csv.png" width="24"/>
                             <p:dataExporter type="csv" target="tblExped" fileName="Expediciones" />
+                              <p:outputLabel value="descargar"  />
                         </h:commandLink>
 
 

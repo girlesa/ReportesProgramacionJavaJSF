@@ -54,11 +54,12 @@
 
 
                         <p:commandButton value="Buscar" action="#{calendarBean.llenarBusesFecha()}" update="tblBuses"/>
-                        <p:outputLabel value="descargar"  />
+                      
                         <h:commandLink>
                            
                             <p:graphicImage url="./../resources/images/csv.png" width="24"/>
                             <p:dataExporter type="csv" target="tblBuses" fileName="FlotaProgramadaFecha" />
+                             <p:outputLabel value="descargar"  />
                         </h:commandLink>
 
                         <p:panel>
