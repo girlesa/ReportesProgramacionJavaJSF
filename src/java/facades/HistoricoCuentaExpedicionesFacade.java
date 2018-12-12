@@ -7,6 +7,7 @@ package facades;
 
 import controller.AbstractFacade;
 import entities.HistoricoCuentaExpediciones;
+import java.util.Date;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -43,6 +44,16 @@ public class HistoricoCuentaExpedicionesFacade extends AbstractFacade<HistoricoC
     List<Object[]> listExp=q.getResultList();
     return listExp;
     
+    }
+    
+     public List<HistoricoCuentaExpediciones> consultarExpedFecha(Date date1,Date date2){
+        
+         List<HistoricoCuentaExpediciones> listExpedFecha;
+         Query q4;
+         q4=em.createNativeQuery("select * from \"Historico_Cuenta_Expediciones\" where \"Fecha\" between '"+date1+"' and '"+date2+"'",HistoricoCuentaExpediciones.class);
+         listExpedFecha=q4.getResultList();
+         return listExpedFecha;
+        
     }
     
 }

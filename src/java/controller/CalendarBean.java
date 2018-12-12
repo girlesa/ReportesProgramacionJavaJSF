@@ -6,7 +6,9 @@
 package controller;
 
 import entities.HistoricoCuentaBuses;
+import entities.HistoricoCuentaExpediciones;
 import facades.HistoricoCuentaBusesFacade;
+import facades.HistoricoCuentaExpedicionesFacade;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
@@ -34,7 +36,7 @@ public class CalendarBean implements Serializable {
 
     private Date date1;
     private Date date2;
-    private String date3="";
+   
     
     
     
@@ -42,6 +44,8 @@ public class CalendarBean implements Serializable {
     
     @EJB
     private HistoricoCuentaBusesFacade connFacade;
+   
+   
      
     public void onDateSelect(SelectEvent event) {
         FacesContext facesContext = FacesContext.getCurrentInstance();
@@ -49,6 +53,8 @@ public class CalendarBean implements Serializable {
       // SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd");
         facesContext.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Date Selected", format.format(event.getObject())));
     }
+
+   
      
   
  
@@ -71,15 +77,9 @@ public class CalendarBean implements Serializable {
         
        
     }
-     public String getDate3() {
-        return date3;
-    }
-    public String setDate3() {
-        
-        this.date3 = date1.toString();
-         //this.date3=transformarFecha(date1);
-         return date3;
-    }
+    
+   
+   
     public Date getDate2() {
         return date2;
     }
@@ -91,6 +91,8 @@ public class CalendarBean implements Serializable {
     
     listBusesFecha=connFacade.consultarBusesFecha2(date1, date2);
     }
+  
+   
    
     public CalendarBean() {
         
@@ -100,17 +102,11 @@ public class CalendarBean implements Serializable {
     public void imprimeData(){
    System.out.println(date1);
    System.out.println(date2);
-   System.out.println(date3);
+ 
    
     }
     
-    public Date convertirFecha(String date3) throws ParseException{
-        
-        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-        Date fecha1 = formatter.parse(date3);
-
-        return fecha1;
-    }
+   
     
     
     
