@@ -8,6 +8,7 @@ package facades;
 import controller.AbstractFacade;
 import controller.AbstractFacade;
 import entities.HistoricoSumKMS;
+import java.util.Date;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -35,11 +36,21 @@ public class HistoricoSumKMSFacade extends AbstractFacade<HistoricoSumKMS> {
     public List obtenerKilometrosMes(){
         HistoricoSumKMSFacade kmsFacade;
         List<Object[]> listKms;
+        
         Query q=em.createNativeQuery("SELECT \"Cuadro\", \"Linea\", \"Tipo_Evento\", kms, \"Tipologia\", \"Operador\", \"RC\", \"Fecha\", \"Tipo_dia\"\n" +
                                     "  FROM public.\"Historico_Sum_KMS\" \n" +
                                     "  WHERE \"Fecha\" between (select Max(\"Fecha\")-8 from \"Historico_Sum_KMS\" )    and  current_date ");
        listKms=q.getResultList();
         return  listKms;
+    }
+     public List<HistoricoSumKMS> consultarKmsFecha(Date date1,Date date2){
+        
+         List<HistoricoSumKMS> listKmsFecha;
+         Query q5;
+         q5=em.createNativeQuery("select * from \"Historico_Sum_KMS\" where \"Fecha\" between '"+date1+"' and '"+date2+"'",HistoricoSumKMS.class);
+         listKmsFecha=q5.getResultList();
+         return listKmsFecha;
+        
     }
     
 }

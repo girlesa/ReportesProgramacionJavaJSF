@@ -6,7 +6,10 @@
       xmlns:p="http://primefaces.org/ui">
 
     <h:head>
-        <title><ui:insert name="title">Reportes Programacion</ui:insert></title>
+        <title>
+            <ui:insert name="title">Reportes Programacion
+            </ui:insert>
+        </title>
         <h:outputStylesheet name="css/jsfcrud.css"/>
         <h:outputStylesheet library="css" name="jsfcrud.css"/>
         <h:outputScript library="js" name="jsfcrud.js"/>
@@ -36,11 +39,11 @@
                         </p:submenu>
                         <p:submenu label="BUSQUEDAS">
 
-                             <p:menuitem value="Flota por Operador y Ruta Comercial" outcome="/consultar_Operador_Ruta.xhtml" />
-                             <p:menuitem value="Flota por fecha" outcome="/consulta_Buses_Fecha.xhtml" />
-                             <p:menuitem value="Kilometraje por fecha" outcome="/consultar_Operador_Ruta.xhtml" />
-                             <p:menuitem value="Expediciones por fecha" outcome="/Consulta_Exped_Fecha.xhtml" />
-                            
+                            <p:menuitem value="Flota por Operador y Ruta Comercial" outcome="/consultar_Operador_Ruta.xhtml" />
+                            <p:menuitem value="Flota por fecha" outcome="/consulta_Buses_Fecha.xhtml" />
+                            <p:menuitem value="Kilometraje por fecha" outcome="/Consultar_Kms_Fecha.xhtml" />
+                            <p:menuitem value="Expediciones por fecha" outcome="/Consulta_Exped_Fecha.xhtml" />
+
                         </p:submenu>
                     </p:menubar>
                 </h:form>
@@ -49,10 +52,10 @@
             <p:layoutUnit position="south" size="120">
                 <ui:insert name="footer"/>
                 <p:panelGrid id="rigths" columns="3" columnClasses="label,value" >
-                <br>TRANSMILENIO SA</br> 
-                <br>Dirección Técnica de Buses</br> 
-                <br>Autor: Ing. Girlesa Buitrago </br>  
-                <p>2018 todos los derechos reservados </p>  
+                    <br>TRANSMILENIO SA</br> 
+                    <br>Dirección Técnica de Buses</br> 
+                    <br>Autor: Ing. Girlesa Buitrago </br>  
+                    <p>2018 todos los derechos reservados </p>  
                 </p:panelGrid>
                 <p:dock position="bottom">
                     <p:menuitem value="Home" icon="/resources/demo/images/dock/home.png" url="#"/>
@@ -78,8 +81,7 @@
 
         </p:layout>
 
-        <br />
-        <h:link outcome="/historicoSumKMS/List" value="Show All HistoricoSumKMS Items"/>
+
     </h:body>
 
 

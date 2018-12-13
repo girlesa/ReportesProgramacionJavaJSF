@@ -32,10 +32,10 @@
 
                     <p:growl id="msgs" showDetail="true" />
 
-                        <p:outputLabel for="button1" value="Desde:" />
-                        <p:calendar id="button1" value="#{calendarBean.date1}" showOn="button" locale= "co" navigator="True" pattern="yyyy-MM-dd" />
-                        <p:outputLabel for="button2" value="Hasta:" />
-                        <p:calendar id="button2" value="#{calendarBean.date2}" showOn="button" locale="co" navigator="True" pattern="yyyy-MM-dd" />
+                        <p:outputLabel for="button1" value="Fecha Inicial:*" />
+                        <p:calendar id="button1" value="#{calendarBean.date1}" showOn="button" locale= "co" navigator="True" pattern="yyyy-MM-dd" placeholder="yyyy-MM-dd" />
+                        <p:outputLabel for="button2" value="Fecha Final:*" />
+                        <p:calendar id="button2" value="#{calendarBean.date2}" showOn="button" locale="co" navigator="True" pattern="yyyy-MM-dd" placeholder="yyyy-MM-dd" />
 
                         <p:dialog modal="true" resizable="false" header="Values" widgetVar="dlg" showEffect="fold">
                             <h:outputText value="Button:" />

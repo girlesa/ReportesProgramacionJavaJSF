@@ -1,6 +1,6 @@
 .ui-widget {
     font-size: 12px !important;
-    color: black;
+    color: blue;
 }
 .ui-layout-north {
     z-index: 20 !important;
@@ -20,4 +20,8 @@
 .ui-button {
     margin-top: 10px !important;
     
+}
+.placeholder {
+  color: red;
+  opacity: 1; /* Firefox */
 }
