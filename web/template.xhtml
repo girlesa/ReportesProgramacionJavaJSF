@@ -10,61 +10,109 @@
         <h:outputStylesheet library="css" name="jsfcrud.css"/>
         <h:outputScript library="js" name="jsfcrud.js"/>
     </h:head>
-        
+
 
     <h:body>
-        
+
         <p:layout fullPage="true">
-            
-        <p:growl id="growl" life="3000" />
+
+            <p:growl id="growl" life="3000" />
 
             <p:layoutUnit position="north" size="65" header="TRANSMILENIO S.A DTB">
-                  
+
                 <h:form id="menuForm">
-                   <p:menubar>
+                    <p:menubar>
                         <p:menuitem value="#{bundle.Home}" outcome="/template" icon="ui-icon-home"/>
                         <p:submenu label="REPORTES 30 DIAS">
                             <p:menuitem value="Flota programada" outcome="/listado_buses.xhtml" />
                             <p:menuitem value="Expediciones" outcome="/cantidad_expediciones.xhtml" />
                             <p:menuitem value="Kilometraje" outcome="/kilometros_com_y_vacio.xhtml" />
                             <p:menuitem value="Vista Pestañas" outcome="/tabTemplate.xhtml" />
-                          
+
                         </p:submenu>
                         <p:submenu label="CUADROS DE CONTROL">
-                            
+
                             <p:menuitem value="FLOTA PROGRAMADA" url="https://datastudio.google.com/open/1J5fQVsM0_PcKO0p_Y_gVqsFjTsgdlUkA" />
                             <p:menuitem value="EXPEDICIONES" url="https://datastudio.google.com/open/1iQSZnPgvWQRhoaS4seXGShL5pw3DmZ2w" />
                             <p:menuitem value="KILOMETRAJE" url="https://datastudio.google.com/open/1u43fD7tcc1TsjiASyytWjNodQpykAd3b" />
                         </p:submenu>
-                         <p:submenu label="BUSQUEDAS">
-                            
+                        <p:submenu label="BUSQUEDAS">
+
                             <p:menuitem value="Flota por Operador y Ruta Comercial" outcome="/consultar_Operador_Ruta.xhtml" />
-                             <p:menuitem value="Flota por fecha" outcome="/consulta_Buses_Fecha.xhtml" />
-                             <p:menuitem value="Kilometraje por fecha" outcome="/Consultar_Kms_Fecha.xhtml" />
+                            <p:menuitem value="Flota por fecha" outcome="/consulta_Buses_Fecha.xhtml" />
+                            <p:menuitem value="Kilometraje por fecha" outcome="/Consultar_Kms_Fecha.xhtml" />
                             <p:menuitem value="Expediciones por fecha" outcome="/Consulta_Exped_Fecha.xhtml" />
                         </p:submenu>
                     </p:menubar>
-                
+
                 </h:form>
             </p:layoutUnit>
 
             <p:layoutUnit position="south" size="120">
                 <ui:insert name="footer"/>
-                 <br>TRANSMILENIO SA</br> 
+                <br>TRANSMILENIO SA</br> 
                 <br>Dirección Técnica de Buses</br> 
                 <br>Autor: Ing. Girlesa Buitrago </br>  
-                 <p>2018 </p>
-                 <p>©todos los derechos reservados</p>
+                <p>2018 </p>
+                <p>©todos los derechos reservados</p>
             </p:layoutUnit>
 
             <p:layoutUnit position="center">
                 <ui:insert name="body"/>
-               
-                <p align="center" >Instrucciones:</p>
-                              <p align="center">Para visualizar todos los datos incluidos en el reporte, elija la máxima capacidad de items por página;</p>
-                     <p align="center">Si desea descargar la información, haga click derecho en el mouse y elija  exportar a excel.</p>
-                     <p align="center">Tenga en cuenta que solo se descargará la cantidad de registros visualizados  por página. Para  ver los cuadros de control, ingrese al link con su cuenta de gmail.com</p>
-                 
+                <p:panelGrid id="display" columns="1" columnClasses="label,value" >
+
+                    <h:form>
+                        <p:growl id="growl" />
+
+
+                        
+                        <h2>
+                            <center>     INFORMACIÓN DE AYUDA</center>
+                        </h2>
+
+                        <p:accordionPanel id="accordion" multiple="true" style="margin-bottom:20px;">
+                            <p:tab title="Información Reportes Mensuales" >
+                                <h:panelGrid columns="2" cellpadding="10" >
+                                    <p:graphicImage url="./../resources/images/tablas.jpg" width="100" />
+                                    <h:outputText
+                                        value="En este campo, usted podrá visualizar información cargada en  el último mes por el área de programación, en el caso de Flota Programada y en el de Expediciones programadas,
+                                        en el caso de Kilometraje, solo podrá visualizar máximo una semana de histórico por limitación de memoria y gran cantidad de datos." />
+                                </h:panelGrid>
+                            </p:tab>
+                            <p:tab title="Información Cuadros de Control">
+                                <h:panelGrid columns="3" cellpadding="10">
+                                    <a href="https://datastudio.google.com/open/1u43fD7tcc1TsjiASyytWjNodQpykAd3b">
+                                        <img src="#{request.contextPath}/resources/images/dashboardIcono.png" width="100" />
+                                    </a>
+                                  
+                                    <h:outputText value="En estos componentes, podrá visualizar gráficamente la información relacionada con la flota, expediciones y kilometraje desde Google Data Studio. 
+                                                  Los datos de la cuenta general para  visualizar la información son:
+                                                  Usuario de correo:  programaciontransmilenio2018;  usuario:  programaciontransmilenio2018, contraseña:  Programacion2018
+                                                  En este sitio, también podrá  seguir las instrucciones siguientes si desea editar:
+
+                                                  1.  Tener una cuenta en gmail
+                                                  2.  Ingresar con su cuente
+                                                  3.  Recibir autorización de compartir los reportes" />
+                                </h:panelGrid>
+                            </p:tab>
+                            <p:tab title="Información Búsquedas y filtros">
+                                <h:panelGrid columns="2" cellpadding="10">
+                                    <a href="#{request.contextPath}/faces/Consultar_Kms_Fecha.xhtml">
+                                        <img src="#{request.contextPath}/resources/images/busqueda3.PNG" width="100" />
+                                    </a>
+                                    <h:outputText value="En estas páginas, podrá buscar por rango de fechas , o por linea, ruta u operador.  Tenga en cuenta que la carga de un histórico, podrá no tener respuesta
+                                                  si no hay suficiente memoria en su equipo." />
+                                </h:panelGrid>
+                            </p:tab>
+                        </p:accordionPanel>
+
+
+
+                        <p:blockUI block="accordion" widgetVar="bui"/>
+                    </h:form>
+
+                </p:panelGrid>
+
             </p:layoutUnit>
 
         </p:layout>
