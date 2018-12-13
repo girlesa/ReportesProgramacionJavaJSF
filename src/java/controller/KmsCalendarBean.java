@@ -13,7 +13,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-//import javax.ejb.EJB;
+import javax.ejb.EJB;
 
 /**
  *
@@ -27,7 +27,7 @@ public class KmsCalendarBean implements Serializable {
    private Date date2;
   
    private List<HistoricoSumKMS>listKms=new ArrayList<>();
-  //@EJB
+  @EJB
    private HistoricoSumKMSFacade connKmsFacade;
 
     public Date getDate1() {
