@@ -80,7 +80,7 @@ public class HistoricoCuentaBusesFacade extends AbstractFacade<HistoricoCuentaBu
         
          List<HistoricoCuentaBuses> listBusesAll;
          Query q6;
-         q6=em.createNativeQuery("select * from \"Historico_Cuenta_Buses\" where \"Fecha\" between '"+date1+"' and '"+date2+"'and where \"Operador\" ilike '%"+cadena1+"%' and \"Ruta_Com\" ilike'%"+cadena2+"%' and \"Linea\" ilike'%"+cadena3+"%'",HistoricoCuentaBuses.class);
+         q6=em.createNativeQuery("select * from \"Historico_Cuenta_Buses\" where \"Fecha\" between '"+date1+"' and '"+date2+"'and  \"Operador\" ilike '%"+cadena1+"%' and \"Ruta_Com\" ilike'%"+cadena2+"%' and \"Linea\" ilike'%"+cadena3+"%'",HistoricoCuentaBuses.class);
          listBusesAll=q6.getResultList();
          return listBusesAll;
         

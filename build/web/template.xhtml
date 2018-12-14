@@ -6,19 +6,22 @@
       xmlns:p="http://primefaces.org/ui">
 
     <h:head>
-        <title><ui:insert name="title">Reportes Programacion</ui:insert></title>
+        <title><ui:insert name="title">
+                Reportes Programacion
+            </ui:insert>
+        </title>
         <h:outputStylesheet library="css" name="jsfcrud.css"/>
         <h:outputScript library="js" name="jsfcrud.js"/>
     </h:head>
 
 
-    <h:body>
+    <h:body style="background-image: url('../resources/images/SITP-FONDO1.png')">
 
-        <p:layout fullPage="true">
+        <p:layout fullPage="true" style="background-image: url('../resources/images/SITP-FONDO1.png')">
 
             <p:growl id="growl" life="3000" />
 
-            <p:layoutUnit position="north" size="65" header="TRANSMILENIO S.A DTB">
+            <p:layoutUnit position="north" size="65" header="TRANSMILENIO S.A DTB" style="background-image: url('../resources/images/SITP-FONDO1.png')">
 
                 <h:form id="menuForm">
                     <p:menubar>
@@ -48,7 +51,7 @@
                 </h:form>
             </p:layoutUnit>
 
-            <p:layoutUnit position="south" size="120">
+            <p:layoutUnit position="south" size="120" style="background-image: url('../resources/images/SITP-FONDO1.png')">
                 <ui:insert name="footer"/>
                 <br>TRANSMILENIO SA</br> 
                 <br>Dirección Técnica de Buses</br> 
@@ -57,20 +60,20 @@
                 <p>©todos los derechos reservados</p>
             </p:layoutUnit>
 
-            <p:layoutUnit position="center">
+            <p:layoutUnit position="center" style="background-image: url('../resources/images/SITP-FONDO1.png')">
                 <ui:insert name="body"/>
-                <p:panelGrid id="display" columns="1" columnClasses="label,value" >
+                <p:panelGrid id="display" columns="1" columnClasses="label,value" style="background-image: url('../resources/images/SITP-FONDO1.png')" >
 
-                    <h:form>
-                        <p:growl id="growl" />
+                    <h:form style="">
+                        <p:growl id="growl"  />
                         
-                        <h2>
+                        <h1>
                             <center>     INFORMACIÓN DE AYUDA</center>
-                        </h2>
+                        </h1>
 
                         <p:accordionPanel id="accordion" multiple="true" style="margin-bottom:20px;">
                             <p:tab title="Información Reportes Mensuales" >
-                                <h:panelGrid columns="2" cellpadding="10" >
+                                <h:panelGrid columns="2" cellpadding="10"  >
                                    <a href="#{request.contextPath}/faces/listado_buses.xhtml">
                                         <img src="#{request.contextPath}/resources/images/tablas.jpg" width="70" />
                                     </a>
@@ -89,7 +92,7 @@
                                   
                                     <h:outputText value="En estos componentes, podrá visualizar gráficamente la información relacionada con la flota, expediciones y kilometraje desde Google Data Studio. 
                                                   Los datos de la cuenta general para  visualizar la información son:
-                                                  Usuario de correo:  programaciontransmilenio2018@gmail.com;  usuario:  programaciontransmilenio2018, contraseña:  Programacion2018
+                                                  Usuario de correo:  programaciontransmilenio2018@gmail.;  usuario:  programaciontransmilenio2018, contraseña:  Programacion2018
                                                   En este sitio, también podrá  seguir las instrucciones siguientes si desea editar:
 
                                                   1.  Tener una cuenta en gmail
@@ -110,7 +113,7 @@
 
 
 
-                        <p:blockUI block="accordion" widgetVar="bui"/>
+                        <p:blockUI block="accordion" widgetVar="bui" />
                     </h:form>
 
                 </p:panelGrid>

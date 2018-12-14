@@ -15,22 +15,22 @@
 
             <h:body>
                 <p:panel header="#{bundle.PageName}">  
-                  
+
                     <h:form>
-                          <h:panelGrid columns="1" >
+                        <h:panelGrid columns="1" >
 
-                        <p:commandButton value="!!!!DEBE LLENAR FECHA INICIAL Y FINAL !!!" type="button" onclick="PF('dlg3').show();" /> 
-                    </h:panelGrid>
-
-
-                    <p:dialog header="INFORMACIÓN CONSULTAS VS MEMORIA" widgetVar="dlg3" showEffect="explode" hideEffect="bounce" height="100">
-                        <h:outputText value="Si tiene poca memoria, elija rango de fechas cortas.  Esta información depende de  la última actualización en la  base de datos de programación" />
-                    </p:dialog>
+                            <p:commandButton value="!!!!DEBE LLENAR FECHA INICIAL Y FINAL !!!" type="button" onclick="PF('dlg3').show();" /> 
+                        </h:panelGrid>
 
 
+                        <p:dialog header="INFORMACIÓN CONSULTAS VS MEMORIA" widgetVar="dlg3" showEffect="explode" hideEffect="bounce" height="100">
+                            <h:outputText value="Si tiene poca memoria, elija rango de fechas cortas.  Esta información depende de  la última actualización en la  base de datos de programación" />
+                        </p:dialog>
 
 
-                    <p:growl id="msgs" showDetail="true" />
+
+
+                        <p:growl id="msgs" showDetail="true" />
 
                         <p:outputLabel for="button1" value="Fecha Inicial:*" />
                         <p:calendar id="button1" value="#{calendarBean.date1}" showOn="button" locale= "co" navigator="True" pattern="yyyy-MM-dd" placeholder="yyyy-MM-dd" />
