@@ -24,9 +24,9 @@
                         </p:dialog>
 
                         <p:outputLabel for="button3" value="Fecha inicial:*" />
-                        <p:calendar id="button3" value="#{kmsCalendarBean.date1}" showOn="button" locale= "co" navigator="True" pattern="yyyy-MM-dd" placeholder="yyyy-MM-dd"/>
+                        <p:calendar id="button3" value="#{kmsCalendarBean.date1}" showOn="button" locale= "co" navigator="True" pattern="yyyy-MM-dd" placeholder="yyyy-MM-dd(obligatorio)"/>
                         <p:outputLabel for="button4" value="Fecha Final:*" />
-                        <p:calendar id="button4" value="#{kmsCalendarBean.date2}" showOn="button" locale="co" navigator="True" pattern="yyyy-MM-dd" placeholder="yyyy-MM-dd"/>
+                        <p:calendar id="button4" value="#{kmsCalendarBean.date2}" showOn="button" locale="co" navigator="True" pattern="yyyy-MM-dd" placeholder="yyyy-MM-dd(obligatorio)"/>
 
                         <p:dialog modal="true" resizable="false" header="Values" widgetVar="dlg" showEffect="fold">
                             <h:outputText value="Button:" />

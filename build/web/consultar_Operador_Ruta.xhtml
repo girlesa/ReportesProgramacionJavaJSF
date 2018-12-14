@@ -13,9 +13,9 @@
     <h:body>
         <h:form>
             <p:outputLabel value="Ingrese Operador"/>
-            <p:inputText value="#{busqueda_Operador_Ruta_Comercial_Bean.txtOperador_a_buscar}"/>
+            <p:inputText value="#{busqueda_Operador_Ruta_Comercial_Bean.txtOperador_a_buscar}" placeholder="nombre o iniciales ..."/>
             <p:outputLabel value="Ingrese Ruta_Comercial"/>
-            <p:inputText value="#{busqueda_Operador_Ruta_Comercial_Bean.txtRuta_com_a_buscar}"/>
+            <p:inputText value="#{busqueda_Operador_Ruta_Comercial_Bean.txtRuta_com_a_buscar}" placeholder="nombre o iniciales..." />
             <p:commandButton value="Buscar" action="#{busqueda_Operador_Ruta_Comercial_Bean.llenarBuses2()}" update="tblBuses"/>
             <h:commandLink>
                     <p:graphicImage url="./../resources/images/csv.png" width="24"/>

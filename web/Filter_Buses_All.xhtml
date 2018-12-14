@@ -33,9 +33,9 @@
                         <p:growl id="msgs" showDetail="true" />
 
                         <p:outputLabel for="button5" value="Fecha Inicial:*" />
-                        <p:calendar id="button5" value="#{filter_Buses_All_Bean.date1}" showOn="button" locale= "co" navigator="True" pattern="yyyy-MM-dd" placeholder="yyyy-MM-dd" />
+                        <p:calendar id="button5" value="#{filter_Buses_All_Bean.date1}" showOn="button" locale= "co" navigator="True" pattern="yyyy-MM-dd" placeholder="yyyy-MM-dd(obligatorio)" />
                         <p:outputLabel for="button6" value="Fecha Final:*" />
-                        <p:calendar id="button6" value="#{filter_Buses_All_Bean.date2}" showOn="button" locale="co" navigator="True" pattern="yyyy-MM-dd" placeholder="yyyy-MM-dd" />
+                        <p:calendar id="button6" value="#{filter_Buses_All_Bean.date2}" showOn="button" locale="co" navigator="True" pattern="yyyy-MM-dd" placeholder="yyyy-MM-dd(obligatorio)" />
 
                         <p:dialog modal="true" resizable="false" header="Values" widgetVar="dlg" showEffect="fold">
                             <h:outputText value="Button:" />
@@ -53,11 +53,11 @@
 
 
                         <p:outputLabel value="Ingrese Operador"/>
-                        <p:inputText value="#{filter_Buses_All_Bean.txt_Operador_a_buscar}"/>
+                        <p:inputText value="#{filter_Buses_All_Bean.txt_Operador_a_buscar}" placeholder="nombre o iniciales ..."/>
                         <p:outputLabel value="Ingrese Ruta_Comercial"/>
-                        <p:inputText value="#{filter_Buses_All_Bean.txt_Ruta_a_Buscar}"/>
+                        <p:inputText value="#{filter_Buses_All_Bean.txt_Ruta_a_Buscar}" placeholder="nombre o iniciales ..."/>
                         <p:outputLabel value="Ingrese Linea"/>
-                        <p:inputText value="#{filter_Buses_All_Bean.txt__Linea_a_Buscar}"/>
+                        <p:inputText value="#{filter_Buses_All_Bean.txt__Linea_a_Buscar}" placeholder="incluye número ..."/>
 
 
                         <p:commandButton value="Buscar" action="#{filter_Buses_All_Bean.llenarListaFilterBuses()}" update="tblBuses"/>       

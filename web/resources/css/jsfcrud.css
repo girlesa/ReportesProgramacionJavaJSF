@@ -1,6 +1,6 @@
 .ui-widget {
     font-size: 12px !important;
-    color: blue;
+    color: cadetblue;
 }
 .ui-layout-north {
     z-index: 20 !important;
@@ -16,7 +16,7 @@
 .ui-widget-header {
     text-align: center;
     text-transform: uppercase;
-    color:  cadetblue;
+    color:  blue;
     background-color: buttonshadow;
     
     
@@ -28,7 +28,11 @@
     
     
 }
-.placeholder {
-  color: red;
-  opacity: 1; /* Firefox */
+input::-webkit-input-placeholder {
+    color:    #cccccc;
+    font-weight: bold;
+}
+input::-moz-placeholder {
+    color:    #cccccc;
+    font-weight: bold;
 }

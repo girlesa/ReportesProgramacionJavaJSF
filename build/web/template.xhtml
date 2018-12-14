@@ -10,7 +10,8 @@
                 Reportes Programacion
             </ui:insert>
         </title>
-        <h:outputStylesheet library="css" name="jsfcrud.css"/>
+        
+        <h:outputStylesheet library="css" name="jsfcrud.css" />
         <h:outputScript library="js" name="jsfcrud.js"/>
     </h:head>
 
@@ -21,7 +22,7 @@
 
             <p:growl id="growl" life="3000" />
 
-            <p:layoutUnit position="north" size="65" header="TRANSMILENIO S.A DTB" style="background-image: url('../resources/images/SITP-FONDO1.png')">
+            <p:layoutUnit position="north" size="150" header="TRANSMILENIO S.A DTB" style="background-image: url('../resources/images/SITP-FONDO1.png')">
 
                 <h:form id="menuForm">
                     <p:menubar>
@@ -70,10 +71,9 @@
                     <h:form style="">
                         <p:growl id="growl"  />
                         
-                        <h1>
-                            <center>     INFORMACIÓN DE AYUDA</center>
-                        </h1>
-
+                        
+                        <p:outputLabel>Información de Ayuda</p:outputLabel>
+                        
                         <p:accordionPanel id="accordion" multiple="true" style="margin-bottom:20px;">
                             <p:tab title="Reportes Mensuales" >
                                 <h:panelGrid columns="2" cellpadding="10"  >

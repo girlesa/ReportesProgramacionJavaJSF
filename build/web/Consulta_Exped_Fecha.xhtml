@@ -16,16 +16,16 @@
                     <h:form>
                         <p:growl id="msgs" showDetail="true" />
                         <h:panelGrid columns="1" >
-                            <p:commandButton value="!!!!DEBE LLENAR FECHA INICIAL Y FINAL !!!" type="button" onclick="PF('dlg3').show();" /> 
+                            <p:commandButton value="¡VER RESTRICCIONES EN FECHAS!" type="button" onclick="PF('dlg3').show();" /> 
                         </h:panelGrid>
                         <p:dialog header="INFORMACIÓN CONSULTAS VS MEMORIA" widgetVar="dlg3" showEffect="explode" hideEffect="bounce" height="100">
                             <h:outputText value="Si tiene poca memoria, elija rango de fechas cortas.  Esta información depende de  la última actualización en la  base de datos de programación" />
                         </p:dialog>
 
                         <p:outputLabel for="button3" value="Fecha inicial:*" />
-                        <p:calendar id="button3" value="#{expedCalendarBean.date1}" showOn="button" locale= "co" navigator="True" pattern="yyyy-MM-dd" placeholder="yyyy-MM-dd"/>
+                        <p:calendar id="button3" value="#{expedCalendarBean.date1}" showOn="button" locale= "co" navigator="True" pattern="yyyy-MM-dd" placeholder="yyyy-MM-dd(obligatorio)"/>
                         <p:outputLabel for="button4" value="Fecha Final:*" />
-                        <p:calendar id="button4" value="#{expedCalendarBean.date2}" showOn="button" locale="co" navigator="True" pattern="yyyy-MM-dd" placeholder="yyyy-MM-dd"/>
+                        <p:calendar id="button4" value="#{expedCalendarBean.date2}" showOn="button" locale="co" navigator="True" pattern="yyyy-MM-dd" placeholder="yyyy-MM-dd(obligatorio)"/>
 
                         <p:dialog modal="true" resizable="false" header="Values" widgetVar="dlg" showEffect="fold">
                             <h:outputText value="Button:" />
