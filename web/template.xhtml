@@ -43,8 +43,11 @@
 
                             <p:menuitem value="Flota por Operador y Ruta Comercial" outcome="/consultar_Operador_Ruta.xhtml" />
                             <p:menuitem value="Flota por fecha" outcome="/consulta_Buses_Fecha.xhtml" />
+                             <p:menuitem value="Flota por Filtros" outcome="/Filter_Buses_All.xhtml" />
+                            
                             <p:menuitem value="Kilometraje por fecha" outcome="/Consultar_Kms_Fecha.xhtml" />
                             <p:menuitem value="Expediciones por fecha" outcome="/Consulta_Exped_Fecha.xhtml" />
+                         
                         </p:submenu>
                     </p:menubar>
 
@@ -72,7 +75,7 @@
                         </h1>
 
                         <p:accordionPanel id="accordion" multiple="true" style="margin-bottom:20px;">
-                            <p:tab title="Información Reportes Mensuales" >
+                            <p:tab title="Reportes Mensuales" >
                                 <h:panelGrid columns="2" cellpadding="10"  >
                                    <a href="#{request.contextPath}/faces/listado_buses.xhtml">
                                         <img src="#{request.contextPath}/resources/images/tablas.jpg" width="70" />
@@ -84,7 +87,7 @@
                                         en el caso de Kilometraje, solo podrá visualizar máximo una semana de histórico por limitación de memoria y gran cantidad de datos." />
                                 </h:panelGrid>
                             </p:tab>
-                            <p:tab title="Información Cuadros de Control">
+                            <p:tab title="Cuadros de Control">
                                 <h:panelGrid columns="3" cellpadding="10">
                                     <a href="https://datastudio.google.com/open/1u43fD7tcc1TsjiASyytWjNodQpykAd3b">
                                         <img src="#{request.contextPath}/resources/images/dashboardIcono.png" width="70" />
@@ -100,9 +103,9 @@
                                                   3.  Recibir autorización de compartir los reportes" />
                                 </h:panelGrid>
                             </p:tab>
-                            <p:tab title="Información Búsquedas y filtros">
+                            <p:tab title="Búsquedas y filtros">
                                 <h:panelGrid columns="2" cellpadding="10">
-                                    <a href="#{request.contextPath}/faces/Consultar_Kms_Fecha.xhtml">
+                                    <a href="#{request.contextPath}/faces/Filter_Buses_All.xhtml">
                                         <img src="#{request.contextPath}/resources/images/busqueda3.PNG" width="70" />
                                     </a>
                                     <h:outputText value="En estas páginas, podrá buscar por rango de fechas , o por linea, ruta u operador.  Tenga en cuenta que la carga de un histórico, podrá no tener respuesta

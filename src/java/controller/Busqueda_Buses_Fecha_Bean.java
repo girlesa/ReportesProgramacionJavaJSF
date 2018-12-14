@@ -5,6 +5,7 @@
  */
 package controller;
 
+import static controller.PrimeFaces.current;
 import entities.HistoricoCuentaBuses;
 import facades.HistoricoCuentaBusesFacade;
 import javax.inject.Named;
