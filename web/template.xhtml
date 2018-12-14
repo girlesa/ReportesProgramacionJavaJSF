@@ -63,8 +63,6 @@
 
                     <h:form>
                         <p:growl id="growl" />
-
-
                         
                         <h2>
                             <center>     INFORMACIÓN DE AYUDA</center>
@@ -73,7 +71,11 @@
                         <p:accordionPanel id="accordion" multiple="true" style="margin-bottom:20px;">
                             <p:tab title="Información Reportes Mensuales" >
                                 <h:panelGrid columns="2" cellpadding="10" >
-                                    <p:graphicImage url="./../resources/images/tablas.jpg" width="100" />
+                                   <a href="#{request.contextPath}/faces/listado_buses.xhtml">
+                                        <img src="#{request.contextPath}/resources/images/tablas.jpg" width="70" />
+                                    </a>
+                                    
+                                  
                                     <h:outputText
                                         value="En este campo, usted podrá visualizar información cargada en  el último mes por el área de programación, en el caso de Flota Programada y en el de Expediciones programadas,
                                         en el caso de Kilometraje, solo podrá visualizar máximo una semana de histórico por limitación de memoria y gran cantidad de datos." />
@@ -82,12 +84,12 @@
                             <p:tab title="Información Cuadros de Control">
                                 <h:panelGrid columns="3" cellpadding="10">
                                     <a href="https://datastudio.google.com/open/1u43fD7tcc1TsjiASyytWjNodQpykAd3b">
-                                        <img src="#{request.contextPath}/resources/images/dashboardIcono.png" width="100" />
+                                        <img src="#{request.contextPath}/resources/images/dashboardIcono.png" width="70" />
                                     </a>
                                   
                                     <h:outputText value="En estos componentes, podrá visualizar gráficamente la información relacionada con la flota, expediciones y kilometraje desde Google Data Studio. 
                                                   Los datos de la cuenta general para  visualizar la información son:
-                                                  Usuario de correo:  programaciontransmilenio2018;  usuario:  programaciontransmilenio2018, contraseña:  Programacion2018
+                                                  Usuario de correo:  programaciontransmilenio2018@gmail.com;  usuario:  programaciontransmilenio2018, contraseña:  Programacion2018
                                                   En este sitio, también podrá  seguir las instrucciones siguientes si desea editar:
 
                                                   1.  Tener una cuenta en gmail
@@ -98,7 +100,7 @@
                             <p:tab title="Información Búsquedas y filtros">
                                 <h:panelGrid columns="2" cellpadding="10">
                                     <a href="#{request.contextPath}/faces/Consultar_Kms_Fecha.xhtml">
-                                        <img src="#{request.contextPath}/resources/images/busqueda3.PNG" width="100" />
+                                        <img src="#{request.contextPath}/resources/images/busqueda3.PNG" width="70" />
                                     </a>
                                     <h:outputText value="En estas páginas, podrá buscar por rango de fechas , o por linea, ruta u operador.  Tenga en cuenta que la carga de un histórico, podrá no tener respuesta
                                                   si no hay suficiente memoria en su equipo." />

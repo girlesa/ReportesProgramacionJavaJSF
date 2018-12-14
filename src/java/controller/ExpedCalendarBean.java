@@ -13,7 +13,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-//import javax.ejb.EJB;
+import javax.ejb.EJB;
 
 /**
  *
@@ -27,7 +27,7 @@ public class ExpedCalendarBean implements Serializable {
     private Date date2;
     private List<HistoricoCuentaExpediciones> listExpedFecha=new ArrayList<>();
     
-   // @EJB
+   @EJB
      private HistoricoCuentaExpedicionesFacade connExpedFacade;
     
      public List<HistoricoCuentaExpediciones> getListExpedFecha() {
