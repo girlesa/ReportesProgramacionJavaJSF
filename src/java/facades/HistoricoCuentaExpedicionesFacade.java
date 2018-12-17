@@ -55,5 +55,15 @@ public class HistoricoCuentaExpedicionesFacade extends AbstractFacade<HistoricoC
          return listExpedFecha;
         
     }
-    
+      public List<HistoricoCuentaExpediciones> consultarExpedicionesAll(Date date1,Date date2,String cadena1,String cadena2,String cadena4){
+        
+         List<HistoricoCuentaExpediciones> listExpedicionesAll;
+         Query q7;
+         //q7=em.createNativeQuery("select * from \"Historico_Cuenta_Expediciones\" where \"Fecha\" between '"+date1+"' and '"+date2+"'and  \"Operador\" ilike '%"+cadena1+"%' and \"RC\" ilike'%"+cadena2+"%' and \"Linea\" ilike'%"+cadena3+"%'and \"Tipo_Evento\" ilike'%"+cadena4+"%'",HistoricoCuentaExpediciones.class);
+         q7=em.createNativeQuery(" select * from  \"Historico_Cuenta_Expediciones\" where \"Fecha\" between '"+date1+"' and '"+date2+"' and  \"Operador\" ilike '%"+cadena1+"%' and\"RC\" ilike'%"+cadena2+"%'and \"Tipo_Evento\" ilike'%"+cadena4+"%'", HistoricoCuentaExpediciones.class);
+         
+         listExpedicionesAll=q7.getResultList();
+         return listExpedicionesAll;
+        
+    }
 }

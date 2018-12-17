@@ -10,7 +10,7 @@
                 Reportes Programacion
             </ui:insert>
         </title>
-        
+
         <h:outputStylesheet library="css" name="jsfcrud.css" />
         <h:outputScript library="js" name="jsfcrud.js"/>
     </h:head>
@@ -41,14 +41,28 @@
                             <p:menuitem value="KILOMETRAJE" url="https://datastudio.google.com/open/1u43fD7tcc1TsjiASyytWjNodQpykAd3b" />
                         </p:submenu>
                         <p:submenu label="BUSQUEDAS">
+                            <p:submenu label="FLOTA PROGRAMADA">
+                                <p:menuitem value="FLOTA FILTRO" outcome="/Filter_Buses_All.xhtml" />
+                                <p:menuitem value="Flota por Operador y Ruta Comercial" outcome="/consultar_Operador_Ruta.xhtml" />
+                                <p:menuitem value="Flota por fecha" outcome="/consulta_Buses_Fecha.xhtml" />
 
-                            <p:menuitem value="Flota por Operador y Ruta Comercial" outcome="/consultar_Operador_Ruta.xhtml" />
-                            <p:menuitem value="Flota por fecha" outcome="/consulta_Buses_Fecha.xhtml" />
-                             <p:menuitem value="Flota por Filtros" outcome="/Filter_Buses_All.xhtml" />
-                            
-                            <p:menuitem value="Kilometraje por fecha" outcome="/Consultar_Kms_Fecha.xhtml" />
-                            <p:menuitem value="Expediciones por fecha" outcome="/Consulta_Exped_Fecha.xhtml" />
-                         
+
+                            </p:submenu>
+                            <p:submenu label="EXPEDICIONES">
+                                <p:menuitem value="EXPEDICIONES FILTROS" outcome="/Filter_Expediciones_All.xhtml" />
+                                <p:menuitem value="Expediciones por fecha" outcome="/Consulta_Exped_Fecha.xhtml" />
+
+
+
+
+                            </p:submenu>
+
+                            <p:submenu label="KILOMETRAJE">
+                                <p:menuitem value="Kilometraje por fecha" outcome="/Consultar_Kms_Fecha.xhtml" />
+
+                            </p:submenu>
+
+
                         </p:submenu>
                     </p:menubar>
 
@@ -70,18 +84,18 @@
 
                     <h:form style="">
                         <p:growl id="growl"  />
-                        
-                        
+
+
                         <p:outputLabel>Información de Ayuda</p:outputLabel>
-                        
+
                         <p:accordionPanel id="accordion" multiple="true" style="margin-bottom:20px;">
                             <p:tab title="Reportes Mensuales" >
                                 <h:panelGrid columns="2" cellpadding="10"  >
-                                   <a href="#{request.contextPath}/faces/listado_buses.xhtml">
+                                    <a href="#{request.contextPath}/faces/listado_buses.xhtml">
                                         <img src="#{request.contextPath}/resources/images/tablas.jpg" width="70" />
                                     </a>
-                                    
-                                  
+
+
                                     <h:outputText
                                         value="En este campo, usted podrá visualizar información cargada en  el último mes por el área de programación, en el caso de Flota Programada y en el de Expediciones programadas,
                                         en el caso de Kilometraje, solo podrá visualizar máximo una semana de histórico por limitación de memoria y gran cantidad de datos." />
@@ -92,7 +106,7 @@
                                     <a href="https://datastudio.google.com/open/1u43fD7tcc1TsjiASyytWjNodQpykAd3b">
                                         <img src="#{request.contextPath}/resources/images/dashboardIcono.png" width="70" />
                                     </a>
-                                  
+
                                     <h:outputText value="En estos componentes, podrá visualizar gráficamente la información relacionada con la flota, expediciones y kilometraje desde Google Data Studio. 
                                                   Los datos de la cuenta general para  visualizar la información son:
                                                   Usuario de correo:  programaciontransmilenio2018@gmail.;  usuario:  programaciontransmilenio2018, contraseña:  Programacion2018
