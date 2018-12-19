@@ -52,5 +52,14 @@ public class HistoricoSumKMSFacade extends AbstractFacade<HistoricoSumKMS> {
          return listKmsFecha;
         
     }
+     public List<HistoricoSumKMS> consultar_Kms_Intervalo(Date date1, Date date2, String cadena1, String cadena2, String cadena3, String cadena4){
+         List<HistoricoSumKMS>listKmsIntervalo;
+         Query q7;
+         q7=em.createNativeQuery("select * from \"Historico_Sum_KMS\" where \"Fecha\" between '"+date1+"' and '"+date2+"'and  \"Operador\" ilike '%"+cadena1+"%' and\"RC\" ilike'%"+cadena2+"%'and \"Tipologia\" ilike'%"+cadena3+"%'and \"Tipo_Evento\" ilike'%"+cadena4+"%'", HistoricoSumKMS.class);
+         listKmsIntervalo=q7.getResultList();
+         return listKmsIntervalo;
+     
+     
+     }
     
 }
