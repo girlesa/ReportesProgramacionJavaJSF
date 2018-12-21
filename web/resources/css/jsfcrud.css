@@ -37,3 +37,6 @@ input::-moz-placeholder {
     color:    #cccccc;
     font-weight: bold;
 }
+.clickAll{
+  display:block;
+}

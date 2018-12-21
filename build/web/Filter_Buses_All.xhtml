@@ -53,11 +53,11 @@
 
 
                         <p:outputLabel value="Ingrese Operador"/>
-                        <p:inputText value="#{filter_Buses_All_Bean.txt_Operador_a_buscar}" placeholder="nombre o iniciales ..."/>
+                        <p:inputText value="#{filter_Buses_All_Bean.txt_Operador_a_buscar}" placeholder="nombre o iniciales(Opcional)"/>
                         <p:outputLabel value="Ingrese Ruta_Comercial"/>
-                        <p:inputText value="#{filter_Buses_All_Bean.txt_Ruta_a_Buscar}" placeholder="nombre o iniciales ..."/>
+                        <p:inputText value="#{filter_Buses_All_Bean.txt_Ruta_a_Buscar}" placeholder="nombre o iniciales(Opcional)"/>
                         <p:outputLabel value="Ingrese Linea"/>
-                        <p:inputText value="#{filter_Buses_All_Bean.txt__Linea_a_Buscar}" placeholder="incluye número ..."/>
+                        <p:inputText value="#{filter_Buses_All_Bean.txt__Linea_a_Buscar}" placeholder="número(Opcional)"/>
 
 
                         <p:commandButton value="Buscar" action="#{filter_Buses_All_Bean.llenarListaFilterBuses()}" update="tblBuses"/>       
@@ -145,7 +145,7 @@
                                 </p:column>
                                 <p:column>
                                     <f:facet name="header">
-                                        <h:outputText value="ANIO"/>
+                                        <h:outputText value="AÑO"/>
                                     </f:facet>
                                     <h:outputText value="#{bus.anio}"/>
                                 </p:column>
