@@ -3,32 +3,28 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/girlesa.buitrago/Documents/NetBeansProjects/Reportes1/web/consulta_Especifica.xhtml</file>
-            <file>file:/C:/Users/girlesa.buitrago/Documents/NetBeansProjects/Reportes1/web/pruebaBusqueda.xhtml</file>
-            <file>file:/C:/Users/girlesa.buitrago/Documents/NetBeansProjects/Reportes1/web/index.xhtml</file>
-            <file>file:/C:/Users/girlesa.buitrago/Documents/NetBeansProjects/Reportes1/src/java/controller/ListadoExpedicionesPeriodoBean.java</file>
-            <file>file:/C:/Users/girlesa.buitrago/Documents/NetBeansProjects/Reportes1/web/buses_Rango_Fechas.xhtml</file>
-            <file>file:/C:/Users/girlesa.buitrago/Documents/NetBeansProjects/Reportes1/web/resources/js/jsfcrud.js</file>
-            <file>file:/C:/Users/girlesa.buitrago/Documents/NetBeansProjects/Reportes1/web/cantidad_expediciones.xhtml</file>
-            <file>file:/C:/Users/girlesa.buitrago/Documents/NetBeansProjects/Reportes1/src/java/controller/CalendarBean.java</file>
             <file>file:/C:/Users/girlesa.buitrago/Documents/NetBeansProjects/Reportes1/src/java/controller/ListadoBusesFechaBean.java</file>
-            <file>file:/C:/Users/girlesa.buitrago/Documents/NetBeansProjects/Reportes1/src/java/controller/ListadoKilometrosBean.java</file>
-            <file>file:/C:/Users/girlesa.buitrago/Documents/NetBeansProjects/Reportes1/src/java/expedBundle.properties</file>
-            <file>file:/C:/Users/girlesa.buitrago/Documents/NetBeansProjects/Reportes1/web/resources/css/jsfcrud.css</file>
-            <file>file:/C:/Users/girlesa.buitrago/Documents/NetBeansProjects/Reportes1/web/consultar_Operador_Ruta.xhtml</file>
-            <file>file:/C:/Users/girlesa.buitrago/Documents/NetBeansProjects/Reportes1/web/Consulta_Exped_Fecha.xhtml</file>
-            <file>file:/C:/Users/girlesa.buitrago/Documents/NetBeansProjects/Reportes1/src/java/controller/HistoricoCuentaBusesController.java</file>
-            <file>file:/C:/Users/girlesa.buitrago/Documents/NetBeansProjects/Reportes1/web/calendarPrueba.xhtml</file>
-            <file>file:/C:/Users/girlesa.buitrago/Documents/NetBeansProjects/Reportes1/web/template.xhtml</file>
-            <file>file:/C:/Users/girlesa.buitrago/Documents/NetBeansProjects/Reportes1/web/kilometros_com_y_vacio.xhtml</file>
-            <file>file:/C:/Users/girlesa.buitrago/Documents/NetBeansProjects/Reportes1/web/listado_buses.xhtml</file>
-            <file>file:/C:/Users/girlesa.buitrago/Documents/NetBeansProjects/Reportes1/src/java/Bundle.properties</file>
-            <file>file:/C:/Users/girlesa.buitrago/Documents/NetBeansProjects/Reportes1/src/java/facades/HistoricoCuentaBusesFacade.java</file>
+            <file>file:/C:/Users/girlesa.buitrago/Documents/NetBeansProjects/Reportes1/web/historicoCuentaBuses/List.xhtml</file>
+            <file>file:/C:/Users/girlesa.buitrago/Documents/NetBeansProjects/Reportes1/web/buses_Rango_Fechas_deprecated.xhtml</file>
             <file>file:/C:/Users/girlesa.buitrago/Documents/NetBeansProjects/Reportes1/web/consulta_Buses_Fecha.xhtml</file>
-            <file>file:/C:/Users/girlesa.buitrago/Documents/NetBeansProjects/Reportes1/src/java/controller/HistoricoCuentaExpedicionesController.java</file>
-            <file>file:/C:/Users/girlesa.buitrago/Documents/NetBeansProjects/Reportes1/src/java/controller/Busqueda_Buses_Fecha_Bean.java</file>
+            <file>file:/C:/Users/girlesa.buitrago/Documents/NetBeansProjects/Reportes1/src/java/facades/HistoricoCuentaBusesFacade.java</file>
+            <file>file:/C:/Users/girlesa.buitrago/Documents/NetBeansProjects/Reportes1/web/template.xhtml</file>
+            <file>file:/C:/Users/girlesa.buitrago/Documents/NetBeansProjects/Reportes1/web/cantidad_expediciones.xhtml</file>
             <file>file:/C:/Users/girlesa.buitrago/Documents/NetBeansProjects/Reportes1/src/java/controller/Busqueda_Operador_Ruta_Comercial_Bean.java</file>
-            <file>file:/C:/Users/girlesa.buitrago/Documents/NetBeansProjects/Reportes1/src/java/facades/HistoricoCuentaExpedicionesFacade.java</file>
+            <file>file:/C:/Users/girlesa.buitrago/Documents/NetBeansProjects/Reportes1/web/calendarPrueba.xhtml</file>
+            <file>file:/C:/Users/girlesa.buitrago/Documents/NetBeansProjects/Reportes1/web/WEB-INF/web.xml</file>
+            <file>file:/C:/Users/girlesa.buitrago/Documents/NetBeansProjects/Reportes1/web/WEB-INF/faces-config.xml</file>
+            <file>file:/C:/Users/girlesa.buitrago/Documents/NetBeansProjects/Reportes1/web/resources/js/jsfcrud.js</file>
+            <file>file:/C:/Users/girlesa.buitrago/Documents/NetBeansProjects/Reportes1/src/java/controller/Busqueda_Buses_Fecha_Bean.java</file>
+            <file>file:/C:/Users/girlesa.buitrago/Documents/NetBeansProjects/Reportes1/web/listado_buses.xhtml</file>
+            <file>file:/C:/Users/girlesa.buitrago/Documents/NetBeansProjects/Reportes1/web/consultar_Operador_Ruta.xhtml</file>
+            <file>file:/C:/Users/girlesa.buitrago/Documents/NetBeansProjects/Reportes1/src/java/controller/HistoricoCuentaBusesController.java</file>
+            <file>file:/C:/Users/girlesa.buitrago/Documents/NetBeansProjects/Reportes1/web/Consultar_Kms_Fecha.xhtml</file>
+            <file>file:/C:/Users/girlesa.buitrago/Documents/NetBeansProjects/Reportes1/web/resources/css/jsfcrud.css</file>
+            <file>file:/C:/Users/girlesa.buitrago/Documents/NetBeansProjects/Reportes1/src/java/controller/ListadoExpedicionesPeriodoBean.java</file>
+            <file>file:/C:/Users/girlesa.buitrago/Documents/NetBeansProjects/Reportes1/web/historicoCuentaBuses/Create.xhtml</file>
+            <file>file:/C:/Users/girlesa.buitrago/Documents/NetBeansProjects/Reportes1/src/java/controller/CalendarBean.java</file>
+            <file>file:/C:/Users/girlesa.buitrago/Documents/NetBeansProjects/Reportes1/src/java/Bundle.properties</file>
         </group>
     </open-files>
 </project-private>
