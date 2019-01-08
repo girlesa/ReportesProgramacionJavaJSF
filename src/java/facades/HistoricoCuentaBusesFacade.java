@@ -38,7 +38,7 @@ public class HistoricoCuentaBusesFacade extends AbstractFacade<HistoricoCuentaBu
         q = em.createNativeQuery("SELECT \"ID\", \"RC\", \"Tipologia\", \"Operador\", \"ZONA\", \"Conteo_Buses_Tipologia\", \n" +
 "       \"Linea\", \"Ruta_Com\", \"Fecha\", \"Tipo_dia\", \"Mes\", \"Anio\", \"Cuenta\", \n" +
 "       \"Suma\"\n" +
-"  FROM public.\"Historico_Cuenta_Buses\" WHERE extract(year from \"Fecha\") =extract(year from current_date) and \"Fecha\" between (select max(\"Fecha\")-30 from \"Historico_Cuenta_Buses\" ) and (select max(\"Fecha\") from \"Historico_Cuenta_Buses\")");
+"  FROM public.\"Historico_Cuenta_Buses\" WHERE  \"Fecha\" between (select max(\"Fecha\")-30 from \"Historico_Cuenta_Buses\" ) and (select max(\"Fecha\") from \"Historico_Cuenta_Buses\")");
         List<Object[]> listado=q.getResultList();
         return listado;    
      

@@ -37,7 +37,7 @@ public class HistoricoCuentaExpedicionesFacade extends AbstractFacade<HistoricoC
         
     Query q =em.createNativeQuery("SELECT \"Linea\", \"Tipo_Evento\", \"Cuenta_expediciones\", \"Tipologia\", \"Operador\", \"RC\", \"Fecha\", \"Mes\", \"Tipo_dia\", \"Dia_Cal\"\n" +
 "  FROM public.\"Historico_Cuenta_Expediciones\"\n" +
-"   WHERE extract(year from \"Fecha\") =extract(year from current_date) and \"Fecha\" between (select max(\"Fecha\")-30 from \"Historico_Cuenta_Expediciones\" ) and (select max(\"Fecha\") from \"Historico_Cuenta_Expediciones\")--- (max(\"Fecha\")-1 and ('2018-10-31'))\n" +
+"   WHERE  \"Fecha\" between (select max(\"Fecha\")-30 from \"Historico_Cuenta_Expediciones\" ) and (select max(\"Fecha\") from \"Historico_Cuenta_Expediciones\")--- (max(\"Fecha\")-1 and ('2018-10-31'))\n" +
 "");
     
     
