@@ -34,12 +34,7 @@
                             <p:menuitem value="Vista Pestañas" outcome="/tabTemplate.xhtml" />
 
                         </p:submenu>
-                        <p:submenu label="CUADROS DE CONTROL">
-
-                            <p:menuitem value="FLOTA PROGRAMADA" url="https://datastudio.google.com/open/1J5fQVsM0_PcKO0p_Y_gVqsFjTsgdlUkA" />
-                            <p:menuitem value="EXPEDICIONES" url="https://datastudio.google.com/open/1iQSZnPgvWQRhoaS4seXGShL5pw3DmZ2w" />
-                            <p:menuitem value="KILOMETRAJE" url="https://datastudio.google.com/open/1u43fD7tcc1TsjiASyytWjNodQpykAd3b" />
-                        </p:submenu>
+                       
                         <p:submenu label="BUSQUEDAS">
                            
                                 <p:menuitem value="FLOTA PROGRAMADA" outcome="/Filter_Buses_All.xhtml" />
@@ -76,35 +71,14 @@
                                  
                                     <a href="#{request.contextPath}/faces/listado_buses.xhtml">
                                         <img src="#{request.contextPath}/resources/images/tablas.jpg" width="70" alt="CONTEO BUSES ÚLTIMOS 30 DÍAS CARGADOS" onmouseover="CONTEO BUSES ÚLTIMOS 30 DÍAS CARGADOS"/>
-                                    </a>
-                                     <a href="https://datastudio.google.com/open/1u43fD7tcc1TsjiASyytWjNodQpykAd3b">
-                                        <img src="#{request.contextPath}/resources/images/dashboardIcono.png" width="70" />
-                                    </a>
-
-
+                                    </a>                                
                                     <h:outputText
                                         value="En la barra de menú, hay tres Opciones de reportes:  1.  'REPORTES 30 DIAS':   corresponde a la información de los últimos 30 días  cargados en la base de datos correspondientes bien sea a Contero de  Flota programada, Expediciones y Kilometraje diario. 2.Opción 'BÚSQUEDAS', realizar filtros de búsqueda por Operador, fechas, ruta comercial , Linea y tipo de evento.             
                                        Los campos OBLIGATORIOS SON LAS FECHAS, si no se llenan, no podrá visualizarse la consulta.  Tenga en cuenta que si no aparece información, debe haber error en la fecha, o la información no ha sido cargada.  Una vez obtenida la consulta en pantalla, se podrá descargar en formato .csv, el cual podrá abrir en excel y visualizar los datos en columnas si desea.                                        
                                        Con esta opción, usted podrá visualizar información solicitada en el rango de fechas o filtros elegido,tenga en cuenta que solo se descargará la información resultante de la consulta.
                                         en el caso de Kilometraje, solo podrá visualizar máximo una semana de histórico por limitación de memoria y gran cantidad de datos.  En la opción 'CUADROS DE CONTROL', se podrá visualizar gráficos.  Esta información puede ser accedida únicamente como invitado desde una cuenta de google, recibiendo el enlace de invitación por parte del administrador de la cuenta." />
                                 </h:panelGrid>
-                            </p:tab>
-                            <p:tab title="Cuadros de Control">
-                                <h:panelGrid columns="3" cellpadding="10">
-                                    <a href="https://datastudio.google.com/open/1u43fD7tcc1TsjiASyytWjNodQpykAd3b">
-                                        <img src="#{request.contextPath}/resources/images/dashboardIcono.png" width="70" />
-                                    </a>
-
-                                    <h:outputText value="En estos componentes, podrá visualizar gráficamente la información relacionada con la flota, expediciones y kilometraje desde Google Data Studio. 
-                                                  Los datos de la cuenta general para  visualizar la información son:
-                                                
-                                                  En este sitio, también podrá  seguir las instrucciones siguientes si desea editar:
-
-                                                  1.  Tener una cuenta en gmail
-                                                  2.  Ingresar con su cuente
-                                                  3.  Recibir autorización de compartir los reportes" />
-                                </h:panelGrid>
-                            </p:tab>
+                            </p:tab>                           
                             <p:tab title="Búsquedas y filtros">
                                 <h:panelGrid columns="2" cellpadding="10">
                                     <a href="#{request.contextPath}/faces/Filter_Buses_All.xhtml">
